@@ -1,65 +1,166 @@
-import Image from "next/image";
+'use client';
+
+import { useState, useEffect } from 'react';
+
+interface Message {
+  auteur_id: number;
+  heure: string;
+  message: string;
+}
+
+interface Discussion {
+  semaine: string;
+  date: string;
+  topo: string;
+  messages: Message[];
+}
+
+interface Person {
+  id?: number;
+  nom: string;
+  prenom: string;
+  profession: string;
+  image: string | null;
+  age: number;
+  diplome: string;
+  commentaire: string;
+}
 
 export default function Home() {
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+  const [discussions, setDiscussions] = useState<Discussion[]>([]);
+  const [authors, setAuthors] = useState<Map<number, Person>>(new Map());
+  const [currentWeek, setCurrentWeek] = useState(1);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function loadData() {
+      try {
+        const [citizensResp, expertsResp, discussionsResp] = await Promise.all([
+          fetch('/data/citizens.json'),
+          fetch('/data/experts.json'),
+          fetch('/data/discussion.json'),
+        ]);
+
+        const citizens: Person[] = await citizensResp.json();
+        const experts: Person[] = await expertsResp.json();
+        const discussionsData: Discussion[] = await discussionsResp.json();
+
+        // Build authors map
+        const authorsMap = new Map<number, Person>();
+        let maxId = 0;
+
+        // Add citizens with their IDs
+        for (const c of citizens) {
+          if (typeof c.id === 'number' && c.id > maxId) maxId = c.id;
+        }
+        for (const c of citizens) {
+          if (c.id) authorsMap.set(c.id, c);
+        }
+
+        // Assign expert ids starting at maxId + 1
+        let nextExpertId = maxId + 1;
+        for (const e of experts) {
+          authorsMap.set(nextExpertId, { ...e, id: nextExpertId });
+          nextExpertId++;
+        }
+
+        setAuthors(authorsMap);
+        setDiscussions(discussionsData);
+        setLoading(false);
+      } catch (error) {
+        console.error('Error loading data:', error);
+        setLoading(false);
+      }
+    }
+
+    loadData();
+  }, []);
+
+  useEffect(() => {
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.key === 'ArrowLeft' && currentWeek > 1) {
+        setCurrentWeek(currentWeek - 1);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+      if (e.key === 'ArrowRight' && currentWeek < 12) {
+        setCurrentWeek(currentWeek + 1);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [currentWeek]);
+
+  if (loading) {
+    return (
+      <main>
+        <div style={{ color: 'var(--muted)' }}>Chargement...</div>
       </main>
-    </div>
+    );
+  }
+
+  const week = discussions[currentWeek - 1] || discussions.find(d => String(d.semaine) === String(currentWeek));
+
+  return (
+    <>
+      <main>
+        <div className="topo">
+          <div className="week-title">
+            <h2>Semaine {week?.semaine || currentWeek}</h2>
+            <div className="topo-date">{week?.date || ''}</div>
+          </div>
+          <p className="topo-content">{week?.topo || 'Aucune discussion trouvée pour cette semaine.'}</p>
+        </div>
+
+        <section className="messages">
+          {week?.messages.map((msg, idx) => {
+            const author = authors.get(msg.auteur_id);
+            const initials = author
+              ? ((author.prenom?.[0] || '') + (author.nom?.[0] || '')).toUpperCase()
+              : 'U';
+            const fullName = author
+              ? `${author.prenom || ''} ${author.nom || ''}`.trim()
+              : `Utilisateur #${msg.auteur_id}`;
+
+            return (
+              <article key={idx} className="msg">
+                <div className="avatar">
+                  {author?.image ? (
+                    <img src={author.image} alt={fullName} />
+                  ) : (
+                    initials
+                  )}
+                </div>
+                <div className="meta">
+                  <div className="who">
+                    {fullName}
+                    <span className="time">{msg.heure}</span>
+                  </div>
+                  <div className="text">{msg.message}</div>
+                </div>
+              </article>
+            );
+          })}
+        </section>
+      </main>
+
+      <div className="weekbar" aria-label="Sélection de la semaine">
+        {Array.from({ length: 12 }, (_, i) => i + 1).map((week) => (
+          <button
+            key={week}
+            className={`weekbtn ${week === currentWeek ? 'active' : ''}`}
+            onClick={() => {
+              setCurrentWeek(week);
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+          >
+            {week}
+          </button>
+        ))}
+      </div>
+
+      <footer />
+    </>
   );
 }

@@ -1,37 +1,111 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ÉolienHub
 
-## Getting Started
+Plateforme collaborative dédiée aux discussions hebdomadaires sur les enjeux de société, la transition écologique et le développement durable.
 
-First, run the development server:
+## 🚀 Démarrage rapide
+
+### Installation
+
+```bash
+npm install
+```
+
+### Développement
+
+Lancez le serveur de développement :
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Ouvrez [http://localhost:3000](http://localhost:3000) dans votre navigateur.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build de production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## 📁 Structure du projet
 
-To learn more about Next.js, take a look at the following resources:
+```
+eo-lien/
+├── app/
+│   ├── about/
+│   │   └── page.tsx          # Page "Qui sommes-nous"
+│   ├── components/
+│   │   └── Header.tsx         # Composant Header partagé
+│   ├── layout.tsx             # Layout principal
+│   ├── page.tsx               # Page d'accueil (discussions)
+│   └── globals.css            # Styles globaux
+├── public/
+│   └── data/
+│       ├── citizens.json      # Base de données des citoyens
+│       ├── experts.json       # Base de données des experts
+│       └── discussion.json    # Discussions hebdomadaires
+└── package.json
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🎨 Fonctionnalités
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Discussions hebdomadaires** : Navigation entre 12 semaines de discussions
+- **Profils citoyens et experts** : Affichage des participants avec leurs informations
+- **Navigation au clavier** : Utilisez ← et → pour naviguer entre les semaines
+- **Design responsive** : Interface adaptée mobile et desktop
 
-## Deploy on Vercel
+## 🛠 Technologies
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- [Next.js 15](https://nextjs.org/) - Framework React
+- TypeScript - Typage statique
+- CSS Modules - Styles scoped
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# eo-lien
+## 📝 Données
+
+Les données sont stockées dans des fichiers JSON statiques :
+
+- `public/data/citizens.json` : Liste des citoyens participants
+- `public/data/experts.json` : Liste des experts
+- `public/data/discussion.json` : Discussions organisées par semaine
+
+### Format des données
+
+**Citizens/Experts** :
+```json
+{
+  "id": 1,
+  "nom": "Dupont",
+  "prenom": "Marie",
+  "profession": "Médecin",
+  "image": null,
+  "age": 34,
+  "diplome": "Doctorat en médecine",
+  "commentaire": "Description..."
+}
+```
+
+**Discussions** :
+```json
+{
+  "semaine": "1",
+  "date": "2025-11-12",
+  "topo": "Thème de la semaine",
+  "messages": [
+    {
+      "auteur_id": 1,
+      "heure": "09:00",
+      "message": "Contenu du message..."
+    }
+  ]
+}
+```
+
+## 🎯 Pages
+
+- `/` - Page d'accueil avec les discussions hebdomadaires
+- `/about` - Page de présentation des citoyens et experts
+
+## 📄 License
+
+MIT
+
