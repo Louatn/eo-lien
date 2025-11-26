@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>ÉolienHub — Discussions hebdomadaires</title>
+    <style>
+        :root{
+            --bg:#f5f7fb;
+            --panel:#ffffff;
+            --muted:#6b7280;
+            --accent:#0ea5ff;
+            --card:#ffffff;
+            --border:#e6eef8;
+            --text:#0f1724;
+        }
+        html,body{height:100%;margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,Segoe UI,Arial,sans-serif}
+        header{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;background:linear-gradient(180deg,#ffffff,#f8fbff);border-bottom:1px solid var(--border)}
+        .brand{display:flex;align-items:center;gap:12px}
+        .logo{display:flex;align-items:center;gap:10px}
+        .logo .mark{background:var(--accent);color:#fff;padding:6px 10px;border-radius:4px;font-weight:700}
+        .logo .title{font-size:20px;font-weight:700;color:var(--text)}
+        nav a{color:var(--text);text-decoration:none;padding:8px 12px;border-radius:6px}
+        nav a:hover{background:rgba(14,165,255,0.08);color:var(--accent)}
+
+        main{max-width:980px;margin:28px auto;padding:20px}
+        .topo{background:linear-gradient(90deg,#ffffff,#fbfdff);padding:18px;border-radius:8px;border-left:6px solid var(--accent);margin-bottom:18px;box-shadow:0 1px 2px rgba(16,24,40,0.04)}
+        .week-title{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+        .messages{display:flex;flex-direction:column;gap:12px}
+        .msg{display:flex;gap:12px;padding:12px;border-radius:8px;background:var(--panel);align-items:flex-start;border:1px solid var(--border);box-shadow:0 1px 0 rgba(16,24,40,0.03)}
+        .avatar{width:56px;height:56px;border-radius:50%;flex:0 0 56px;background:#e6f7ff;color:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:700}
+        .meta{flex:1}
+        .meta .who{font-weight:700;color:var(--text)}
+        .meta .time{color:var(--muted);font-size:13px;margin-left:8px}
+        .text{margin-top:6px;line-height:1.45;color:#213547}
+
+        /* bottom week selector */
+        .weekbar{position:fixed;left:0;right:0;bottom:0;background:rgba(255,255,255,0.98);border-top:1px solid var(--border);padding:10px 12px;display:flex;align-items:center;justify-content:center;gap:8px;backdrop-filter:blur(4px)}
+        .weekbtn{background:#fff;border:1px solid var(--border);color:var(--text);padding:8px 12px;border-radius:6px;cursor:pointer}
+        .weekbtn.active{background:var(--accent);color:#fff;border-color:var(--accent);box-shadow:0 2px 6px rgba(14,165,255,0.12)}
+
+        footer{height:54px}
+
+        /* responsive */
+        @media (max-width:640px){main{padding:12px} .avatar{width:44px;height:44px}}
+    </style>
+</head>
+<body>
+	<header>
+		<div class="brand">
+			<div class="logo">
+				<div class="mark">ÉH</div>
+				<div class="title">ÉolienHub</div>
+			</div>
+		</div>
+		<nav>
+			<a href="about.html">qui‑sommes‑nous ?</a>
+		</nav>
+	</header>
+
+	<main>
+		<div class="topo" id="topo">
+			<div class="week-title"><h2 style="margin:0" id="topo-title">Semaine 1</h2><div style="color:var(--muted);font-size:14px;margin-left:8px" id="topo-date"></div></div>
+			<p id="topo-content" style="margin:0;color:#ddd"></p>
+		</div>
+
+		<section class="messages" id="messages">
+			<!-- messages injected here -->
+		</section>
+	</main>
+
+	<div class="weekbar" id="weekbar" aria-label="Sélection de la semaine">
+		<!-- week buttons injected here -->
+	</div>
+
+	<footer></footer>
+
+	<script>
+		// Chargement des données et rendu
+		(async function(){
+			const [citizensResp, expertsResp, discussionsResp] = await Promise.all([
+				fetch('data/citizens.json'),
+				fetch('data/experts.json'),
+				fetch('data/discussion.json')
+			]);
+			const citizens = await citizensResp.json();
+			const experts = await expertsResp.json();
+			const discussions = await discussionsResp.json();
+
+			// Build authors map. Assumption: citizens.json entries contain numeric `id`.
+			// experts.json in this repo doesn't contain `id`; assign in-memory ids starting after max citizen id
+			const authors = new Map();
+			let maxId = 0;
+			for(const c of citizens){ if(typeof c.id === 'number' && c.id > maxId) maxId = c.id; }
+			for(const c of citizens){ authors.set(c.id, c); }
+
+			// Assign expert ids starting at maxId + 1 (in-memory only) so auteur_id references like 9..12 resolve
+			let nextExpertId = maxId + 1;
+			for(const e of experts){ authors.set(nextExpertId, Object.assign({id: nextExpertId}, e)); nextExpertId++; }
+
+			// UI helpers
+			const messagesEl = document.getElementById('messages');
+			const topoTitleEl = document.getElementById('topo-title');
+			const topoDateEl = document.getElementById('topo-date');
+			const topoContentEl = document.getElementById('topo-content');
+			const weekbar = document.getElementById('weekbar');
+
+			function renderMessage(msg){
+				const author = authors.get(msg.auteur_id);
+				const wrap = document.createElement('article'); wrap.className='msg';
+
+				const avatar = document.createElement('div'); avatar.className='avatar';
+				if(author && author.image){
+					const img = document.createElement('img'); img.src=author.image; img.alt=(author.prenom||'')+' '+(author.nom||''); img.style.width='100%'; img.style.height='100%'; img.style.objectFit='cover'; img.style.borderRadius='50%'; avatar.textContent=''; avatar.appendChild(img);
+				} else if(author){
+					// initials
+					const inits = ((author.prenom||'')[0]||'') + ((author.nom||'')[0]||''); avatar.textContent = inits.toUpperCase();
+				} else {
+					avatar.textContent = 'U';
+				}
+
+				const meta = document.createElement('div'); meta.className='meta';
+				const who = document.createElement('div'); who.className='who';
+				who.textContent = author ? ((author.prenom||'') + ' ' + (author.nom||'')).trim() : 'Utilisateur #' + msg.auteur_id;
+				const time = document.createElement('span'); time.className='time'; time.textContent = msg.heure || '';
+				who.appendChild(time);
+
+				const text = document.createElement('div'); text.className='text'; text.textContent = msg.message;
+
+				meta.appendChild(who); meta.appendChild(text);
+				wrap.appendChild(avatar); wrap.appendChild(meta);
+				return wrap;
+			}
+
+			function renderWeek(weekIndex){
+				// weekIndex is 0-based index into discussions array. But discussions may use `semaine` strings.
+				const week = discussions[weekIndex] || discussions.find(d => String(d.semaine) === String(weekIndex+1));
+				if(!week){ messagesEl.innerHTML = '<div style="color:var(--muted)">Aucune discussion trouvée pour cette semaine.</div>'; topoTitleEl.textContent = 'Semaine ' + (weekIndex+1); topoContentEl.textContent = ''; topoDateEl.textContent = ''; return; }
+				topoTitleEl.textContent = 'Semaine ' + week.semaine;
+				topoDateEl.textContent = week.date || '';
+				topoContentEl.textContent = week.topo || '';
+				messagesEl.innerHTML = '';
+				for(const m of (week.messages||[])){
+					messagesEl.appendChild(renderMessage(m));
+				}
+			}
+
+			// build week buttons (1..12)
+			const totalWeeks = 12;
+			let currentWeek = 1;
+			function buildWeekbar(){
+				weekbar.innerHTML = '';
+				for(let i=1;i<=totalWeeks;i++){
+					const b = document.createElement('button'); b.className='weekbtn'; b.textContent = i;
+					b.dataset.week = i;
+					if(i===currentWeek) b.classList.add('active');
+					b.addEventListener('click', ()=>{ currentWeek = i; updateWeek(); });
+					weekbar.appendChild(b);
+				}
+			}
+
+			function updateWeek(){
+				// update active class
+				Array.from(weekbar.children).forEach(btn=>{ btn.classList.toggle('active', Number(btn.dataset.week)===currentWeek); });
+				renderWeek(currentWeek-1);
+				window.scrollTo({top:0,behavior:'smooth'});
+			}
+
+			// keyboard navigation
+			window.addEventListener('keydown', (e)=>{
+				if(e.key === 'ArrowLeft'){ if(currentWeek>1){ currentWeek--; updateWeek(); } }
+				if(e.key === 'ArrowRight'){ if(currentWeek<totalWeeks){ currentWeek++; updateWeek(); } }
+			});
+
+			// initialize
+			buildWeekbar(); updateWeek();
+		})().catch(err=>{
+			console.error(err); document.getElementById('messages').innerHTML = '<div style="color:var(--muted)">Erreur lors du chargement des données. Ouvrez le site via un serveur statique (ex: python3 -m http.server) pour permettre fetch.</div>';
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+[
+    {
+        "semaine": "1",
+        "date": "2025-11-12",
+        "topo": "Accès aux soins en zone rurale",
+        "messages": [
+            { "auteur_id": 1, "heure": "09:00", "message": "Bonjour à tous, je lance le sujet." },
+            { "auteur_id": 2, "heure": "09:07", "message": "Les applications pourraient aider à coordonner les rendez-vous et le transport." },
+            { "auteur_id": 6, "heure": "09:15", "message": "Dans mon lycée pro, je vois des élèves qui renoncent aux soins faute de mobilité." },
+            { "auteur_id": 3, "heure": "09:22", "message": "On pourrait organiser des navettes locales pour les consultations programmées." },
+            { "auteur_id": 4, "heure": "09:30", "message": "Les infirmières rurales ont souvent des plannings surchargés." },
+            { "auteur_id": 5, "heure": "09:37", "message": "Il faut aussi penser à la prise en charge financière des déplacements." },
+            { "auteur_id": 7, "heure": "09:45", "message": "La coordination entre médecins et services sociaux est essentielle." },
+            { "auteur_id": 8, "heure": "09:52", "message": "Des permanences mobiles pourraient réduire les délais d'attente." },
+            { "auteur_id": 2, "heure": "10:30", "message": "Des partenariats entre communes pourraient mutualiser les ressources." },
+            { "auteur_id": 6, "heure": "10:38", "message": "Impliquer les écoles pour la prévention et l'information peut aider." }
+        ]
+    },
+    {
+        "semaine": "2",
+        "date": "2025-11-19",
+        "topo": "Transport et logistique du dernier kilomètre",
+        "messages": [
+            { "auteur_id": 7, "heure": "10:00", "message": "Sur les festivals, on a souvent des soucis d’acheminement de matériel." },
+            { "auteur_id": 8, "heure": "10:12", "message": "Côté infrastructures, les pistes cyclables réduisent la pression sur la voirie." },
+            { "auteur_id": 3, "heure": "10:25", "message": "Les migrations pendulaires compliquent la planification des transports." },
+            { "auteur_id": 1, "heure": "10:33", "message": "Des hubs logistiques locaux pourraient centraliser les livraisons." },
+            { "auteur_id": 4, "heure": "10:40", "message": "Le recours aux véhicules électriques demande des bornes de recharge." },
+            { "auteur_id": 5, "heure": "10:48", "message": "La coordination avec les producteurs locaux est clé pour les circuits courts." },
+            { "auteur_id": 6, "heure": "10:55", "message": "Le dernier kilomètre est souvent le plus coûteux pour les entreprises." },
+            { "auteur_id": 7, "heure": "11:03", "message": "Des services de livraison partagée pourraient réduire les trajets." },
+            { "auteur_id": 8, "heure": "11:10", "message": "Penser aux solutions multimodales (vélo + train)." },
+            { "auteur_id": 2, "heure": "11:48", "message": "Tester des plateformes locales de mise en relation transport/charges." },
+            { "auteur_id": 3, "heure": "11:55", "message": "Évaluer l'impact environnemental des options choisies." }
+        ]
+    },
+    {
+        "semaine": "3",
+        "date": "2025-11-26",
+        "topo": "Télémedecine et consultations à distance",
+        "messages": [
+            { "auteur_id": 4, "heure": "09:05", "message": "La téléconsultation facilite l'accès pour les personnes âgées isolées." },
+            { "auteur_id": 2, "heure": "09:20", "message": "Il faut penser à la confidentialité et à la formation des soignants." },
+            { "auteur_id": 1, "heure": "09:43", "message": "Des espaces communs équipés peuvent pallier les problèmes de réseau." },
+            { "auteur_id": 3, "heure": "09:50", "message": "La téléconsultation ne remplace pas toujours l'examen physique." },
+            { "auteur_id": 5, "heure": "09:58", "message": "Des kits de télémédecine (oxymètre, tension) à prêter localement ?" },
+            { "auteur_id": 6, "heure": "10:05", "message": "Assurer la sécurisation des données patients est primordial." },
+            { "auteur_id": 7, "heure": "10:12", "message": "La facturation et le remboursement doivent être clairs pour les praticiens." },
+            { "auteur_id": 8, "heure": "10:20", "message": "Penser à l'accessibilité pour les personnes en situation de handicap." },
+            { "auteur_id": 2, "heure": "10:58", "message": "Encourager les retours d'expérience des patients et soignants." },
+            { "auteur_id": 4, "heure": "11:05", "message": "Veiller à l'interopérabilité des outils entre établissements." }
+        ]
+    },
+    {
+        "semaine": "4",
+        "date": "2025-12-03",
+        "topo": "Prévention et santé publique",
+        "messages": [
+            { "auteur_id": 5, "heure": "11:00", "message": "Les campagnes de prévention doivent être adaptées aux cultures locales." },
+            { "auteur_id": 1, "heure": "11:18", "message": "L'école est un bon vecteur pour sensibiliser tôt." },
+            { "auteur_id": 6, "heure": "11:30", "message": "Les infirmiers scolaires pourraient jouer un rôle renforcé." },
+            { "auteur_id": 2, "heure": "11:37", "message": "Utiliser des messages simples et visuels pour toucher tous les publics." },
+            { "auteur_id": 3, "heure": "11:45", "message": "Impliquer les élus locaux pour assurer la diffusion des campagnes." },
+            { "auteur_id": 4, "heure": "11:52", "message": "La prévention nutritionnelle est souvent négligée." },
+            { "auteur_id": 6, "heure": "12:00", "message": "Des ateliers pratiques en communauté peuvent changer les habitudes." },
+            { "auteur_id": 7, "heure": "12:08", "message": "La vaccination reste un enjeu important à promouvoir." },
+            { "auteur_id": 8, "heure": "12:15", "message": "Évaluer l'impact des actions pour ajuster les messages." },
+            { "auteur_id": 1, "heure": "12:53", "message": "Former des référents prévention dans chaque village." },
+            { "auteur_id": 5, "heure": "13:00", "message": "Adapter les horaires des actions pour toucher les actifs et les retraités." }
+        ]
+    },
+    {
+        "semaine": "5",
+        "date": "2025-12-10",
+        "topo": "Énergies renouvelables pour les zones isolées",
+        "messages": [
+            { "auteur_id": 7, "heure": "09:00", "message": "La maintenance et la formation locale sont cruciales." },
+            { "auteur_id": 8, "heure": "09:20", "message": "Pensez aux batteries et à la gestion des cycles de vie." },
+            { "auteur_id": 1, "heure": "09:28", "message": "Les micro-réseaux peuvent desservir plusieurs hameaux." },
+            { "auteur_id": 2, "heure": "09:35", "message": "Financer des projets pilotes facilite l'adoption." },
+            { "auteur_id": 3, "heure": "09:43", "message": "La formation d'une filière locale pour l'installation est importante." },
+            { "auteur_id": 4, "heure": "09:50", "message": "L'hybridation (solaire+biomasse) peut sécuriser l'approvisionnement." },
+            { "auteur_id": 5, "heure": "09:58", "message": "S'assurer de la rentabilité sociale pour les petites communes." },
+            { "auteur_id": 6, "heure": "10:05", "message": "L'entretien régulier réduit les pannes et les abandons." },
+            { "auteur_id": 7, "heure": "10:13", "message": "Les coopératives énergétiques locales sont une piste intéressante." },
+            { "auteur_id": 8, "heure": "10:20", "message": "Penser aux aides et subventions disponibles pour les territoires." }
+        ]
+    },
+    {
+        "semaine": "6",
+        "date": "2025-12-17",
+        "topo": "Éducation et formation professionnelle",
+        "messages": [
+            { "auteur_id": 3, "heure": "10:10", "message": "Il manque des formations adaptées aux entreprises locales." },
+            { "auteur_id": 5, "heure": "10:40", "message": "La valorisation des filières locales est aussi importante." },
+            { "auteur_id": 1, "heure": "10:48", "message": "Renforcer les liens entre lycées et PME locales." },
+            { "auteur_id": 2, "heure": "10:55", "message": "Des modules courts et pratiques faciliteraient l'insertion." },
+            { "auteur_id": 3, "heure": "11:03", "message": "Utiliser des enseignants issus du monde professionnel pour la formation." },
+            { "auteur_id": 4, "heure": "11:10", "message": "Favoriser la mobilité et les stages internationaux si possible." },
+            { "auteur_id": 5, "heure": "11:18", "message": "Accompagner les jeunes dans la création d'activités locales." },
+            { "auteur_id": 6, "heure": "11:25", "message": "Des financements pour formations spécifiques sont nécessaires." },
+            { "auteur_id": 7, "heure": "11:33", "message": "Impliquer les chambres consulaires pour adapter les contenus." },
+            { "auteur_id": 8, "heure": "11:40", "message": "La formation continue pour adultes est souvent oubliée." }
+        ]
+    },
+    {
+        "semaine": "7",
+        "date": "2025-12-24",
+        "topo": "Agroécologie et circuits courts",
+        "messages": [
+            { "auteur_id": 2, "heure": "09:30", "message": "Les AMAP et marchés locaux renforcent la résilience." },
+            { "auteur_id": 4, "heure": "09:45", "message": "La transition demande un accompagnement technique pour les agriculteurs." },
+            { "auteur_id": 1, "heure": "10:08", "message": "Favoriser les fermes pédagogiques pour sensibiliser le public." },
+            { "auteur_id": 2, "heure": "10:15", "message": "Mutualiser les outils agricoles entre exploitations." },
+            { "auteur_id": 3, "heure": "10:23", "message": "Développer des circuits courts pour valoriser les produits." },
+            { "auteur_id": 4, "heure": "10:30", "message": "Encourager les pratiques agroforestières pour la biodiversité." },
+            { "auteur_id": 5, "heure": "10:38", "message": "Proposer des formations pratiques sur l'agroécologie." },
+            { "auteur_id": 6, "heure": "10:45", "message": "Les aides publiques doivent être accessibles aux petites fermes." },
+            { "auteur_id": 7, "heure": "10:53", "message": "Valoriser les circuits de transformation locale (conserveries)." },
+            { "auteur_id": 8, "heure": "11:00", "message": "Promouvoir les labels locaux pour la confiance des consommateurs." }
+        ]
+    },
+    {
+        "semaine": "8",
+        "date": "2025-12-31",
+        "topo": "Gestion des déchets",
+        "messages": [
+            { "auteur_id": 6, "heure": "14:00", "message": "Le tri en milieu rural reste peu systématique." },
+            { "auteur_id": 7, "heure": "14:15", "message": "Des points de collecte mobiles pourraient aider." },
+            { "auteur_id": 1, "heure": "14:38", "message": "Mettre en place des circuits de réemploi locaux." },
+            { "auteur_id": 2, "heure": "14:45", "message": "Faciliter l'accès aux déchèteries pour les habitants isolés." },
+            { "auteur_id": 3, "heure": "14:53", "message": "Encourager les composts de voisinage pour les déchets organiques." },
+            { "auteur_id": 4, "heure": "15:00", "message": "Soutenir les initiatives de réparation pour réduire le volume." },
+            { "auteur_id": 5, "heure": "15:08", "message": "Organiser des collectes thématiques (électroménager, textile)." },
+            { "auteur_id": 6, "heure": "15:15", "message": "Des ateliers de fabrication pour donner une seconde vie aux matériaux." },
+            { "auteur_id": 7, "heure": "15:23", "message": "Impliquer les commerces pour la réduction des emballages." },
+            { "auteur_id": 8, "heure": "15:30", "message": "Créer des labels pour les initiatives locales exemplaires." }
+        ]
+    },
+    {
+        "semaine": "9",
+        "date": "2026-01-07",
+        "topo": "Urbanisme et mobilité douce",
+        "messages": [
+            { "auteur_id": 8, "heure": "16:00", "message": "Les voies piétonnes favorisent le commerce local." },
+            { "auteur_id": 1, "heure": "16:38", "message": "Créer des corridors verts pour améliorer le cadre de vie." },
+            { "auteur_id": 2, "heure": "16:45", "message": "Favoriser les déplacements à vélo avec parkings sécurisés." },
+            { "auteur_id": 3, "heure": "16:53", "message": "Limiter la vitesse en centre-bourg pour la sécurité." },
+            { "auteur_id": 4, "heure": "17:00", "message": "Mixer usages résidentiels et commerces pour réduire les trajets." },
+            { "auteur_id": 5, "heure": "17:08", "message": "Améliorer l'éclairage et la signalisation pour piétons." },
+            { "auteur_id": 6, "heure": "17:15", "message": "Penser aux personnes à mobilité réduite dans les aménagements." },
+            { "auteur_id": 7, "heure": "17:23", "message": "Des zones 30 peuvent transformer la qualité de vie locale." },
+            { "auteur_id": 8, "heure": "17:30", "message": "Soutenir le covoiturage pour les trajets domicile-travail." }
+        ]
+    },
+    {
+        "semaine": "10",
+        "date": "2026-01-14",
+        "topo": "Numérisation des services publics",
+        "messages": [
+            { "auteur_id": 1, "heure": "09:10", "message": "La dématérialisation simplifie certaines démarches administratives." },
+            { "auteur_id": 3, "heure": "09:25", "message": "Attention aux fractures numériques et à l'inclusion." },
+            { "auteur_id": 2, "heure": "09:48", "message": "Former des agents pour accompagner le public dans les guichets numériques." },
+            { "auteur_id": 4, "heure": "09:55", "message": "Simplifier les interfaces pour tous les profils d'usagers." },
+            { "auteur_id": 5, "heure": "10:03", "message": "Garantir la sécurité et la confidentialité des données." },
+            { "auteur_id": 6, "heure": "10:10", "message": "Proposer des alternatives pour ceux qui ne sont pas connectés." },
+            { "auteur_id": 7, "heure": "10:18", "message": "Développer des services mobile-first pour un accès large." },
+            { "auteur_id": 8, "heure": "10:25", "message": "Coordonner les initiatives entre collectivités pour éviter la duplication." },
+            { "auteur_id": 1, "heure": "11:03", "message": "Prévoir des campagnes d'information sur les nouveaux services." },
+            { "auteur_id": 3, "heure": "11:10", "message": "Assurer un support multicanal pour résoudre les problèmes techniques." }
+        ]
+    },
+    {
+        "semaine": "11",
+        "date": "2026-01-21",
+        "topo": "Économie circulaire dans les territoires",
+        "messages": [
+            { "auteur_id": 5, "heure": "11:05", "message": "Le réemploi peut créer des emplois locaux." },
+            { "auteur_id": 4, "heure": "11:20", "message": "Des filières courtes pour la réparation sont utiles." },
+            { "auteur_id": 2, "heure": "11:35", "message": "Il faut des aides pour lancer des ateliers partagés." },
+            { "auteur_id": 6, "heure": "11:43", "message": "Inciter les entreprises à réutiliser les matériaux locaux." },
+            { "auteur_id": 7, "heure": "11:50", "message": "Créer des plateformes d'échange pour matières résiduelles." },
+            { "auteur_id": 8, "heure": "11:58", "message": "Former aux métiers de la réparation et du recyclage." },
+            { "auteur_id": 1, "heure": "12:35", "message": "Favoriser l'achat responsable par des labels locaux." },
+            { "auteur_id": 2, "heure": "12:43", "message": "Créer des synergies entre filières agricoles et industrielles." },
+            { "auteur_id": 3, "heure": "12:50", "message": "Penser à la logistique inverse pour récupérer les produits." },
+            { "auteur_id": 4, "heure": "12:58", "message": "Des partenariats publics-privés peuvent accélérer les projets." },
+            { "auteur_id": 5, "heure": "13:05", "message": "Mesurer les impacts économiques et sociaux des initiatives." }
+        ]
+    },
+    {
+        "semaine": "12",
+        "date": "2026-01-28",
+        "topo": "Culture et lien social",
+        "messages": [
+            { "auteur_id": 6, "heure": "18:15", "message": "La diffusion culturelle numérique peut compléter l'offre locale." },
+            { "auteur_id": 7, "heure": "18:30", "message": "Soutenir les bénévoles est essentiel pour faire vivre les initiatives." },
+            { "auteur_id": 1, "heure": "18:38", "message": "Créer des lieux polyvalents pour spectacle, réunion et ateliers." },
+            { "auteur_id": 2, "heure": "18:45", "message": "Favoriser les collaborations entre associations et écoles." },
+            { "auteur_id": 3, "heure": "18:53", "message": "Promouvoir les pratiques artistiques locales auprès des jeunes." },
+            { "auteur_id": 4, "heure": "19:00", "message": "Des résidences d'artistes peuvent dynamiser un territoire." },
+            { "auteur_id": 5, "heure": "19:08", "message": "La culture comme vecteur d'attractivité et de tourisme." },
+            { "auteur_id": 6, "heure": "19:15", "message": "Soutenir la formation des intervenants culturels." },
+            { "auteur_id": 7, "heure": "19:23", "message": "Mettre en place des billetteries solidaires pour l'accès." },
+            { "auteur_id": 8, "heure": "19:30", "message": "Favoriser la co-construction des projets avec les habitants." }
+        ]
+    }
+]

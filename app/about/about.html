@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Qui sommes-nous ? — ÉolienHub</title>
+  <style>
+    :root{--bg:#0b0b0b;--panel:#111;--muted:#bfbfbf;--accent:#ff9900;--card:#141414}
+    html,body{margin:0;background:var(--bg);color:#fff;font-family:Inter,system-ui,Segoe UI,Arial,sans-serif;line-height:1.6}
+    header{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;background:linear-gradient(180deg,#0b0b0b, #0f0f0f);border-bottom:1px solid #1a1a1a}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{display:flex;align-items:center;gap:10px}
+    .logo .mark{background:var(--accent);color:#111;padding:6px 10px;border-radius:4px;font-weight:700}
+    .logo .title{font-size:20px;font-weight:700}
+    nav a{color:#fff;text-decoration:none;padding:8px 12px;border-radius:6px}
+    nav a:hover{background:rgba(255,153,0,0.08);color:var(--accent)}
+
+    main{max-width:1100px;margin:28px auto;padding:20px}
+    .intro{background:linear-gradient(90deg,#111,#0f0f0f);padding:24px;border-radius:8px;border-left:6px solid var(--accent);margin-bottom:32px}
+    .intro h1{margin:0 0 12px 0;font-size:28px;color:var(--accent)}
+    .intro p{margin:0;color:#ddd;font-size:16px}
+
+    section{margin-bottom:48px}
+    section h2{color:var(--accent);font-size:24px;margin-bottom:18px;border-bottom:2px solid #222;padding-bottom:8px}
+
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px}
+    .card{background:var(--card);border-radius:8px;padding:18px;border:1px solid #222;display:flex;flex-direction:column;gap:12px}
+    .card-header{display:flex;gap:14px;align-items:flex-start}
+    .profile-pic{width:80px;height:80px;border-radius:50%;flex:0 0 80px;background:#222;color:var(--muted);display:flex;align-items:center;justify-content:center;font-weight:600;font-size:20px}
+    .profile-pic img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+    .card-title{flex:1}
+    .card-title h3{margin:0 0 4px 0;font-size:18px;color:#fff}
+    .card-title .meta{color:var(--muted);font-size:14px}
+    .card-body{color:#ddd;font-size:14px}
+    .card-body .label{color:var(--accent);font-weight:600;margin-top:8px}
+
+    @media (max-width:640px){.grid{grid-template-columns:1fr} main{padding:12px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">
+        <div class="mark">ÉH</div>
+        <div class="title">ÉolienHub</div>
+      </div>
+    </div>
+    <nav>
+      <a href="index.html">← Retour aux discussions</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="intro">
+      <h1>À propos d'ÉolienHub</h1>
+      <p>
+        ÉolienHub est une plateforme collaborative dédiée aux discussions hebdomadaires sur les enjeux de société, 
+        la transition écologique et le développement durable. Chaque semaine, citoyens et experts échangent sur des thématiques variées 
+        — santé publique, mobilité, éducation, agroécologie, économie circulaire — afin de co-construire des solutions adaptées aux territoires. 
+        Notre objectif est de favoriser le dialogue, de croiser les expertises et de rendre visibles les initiatives locales porteuses d'avenir.
+      </p>
+    </div>
+
+    <section>
+      <h2>Les Citoyens</h2>
+      <div class="grid" id="citizens-grid">
+        <!-- Citizens cards injected here -->
+      </div>
+    </section>
+
+    <section>
+      <h2>Les Experts</h2>
+      <div class="grid" id="experts-grid">
+        <!-- Experts cards injected here -->
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (async function(){
+      const [citizensResp, expertsResp] = await Promise.all([
+        fetch('data/citizens.json'),
+        fetch('data/experts.json')
+      ]);
+      const citizens = await citizensResp.json();
+      const experts = await expertsResp.json();
+
+      const citizensGrid = document.getElementById('citizens-grid');
+      const expertsGrid = document.getElementById('experts-grid');
+
+      function createCard(person){
+        const card = document.createElement('article');
+        card.className = 'card';
+
+        const header = document.createElement('div');
+        header.className = 'card-header';
+
+        const profilePic = document.createElement('div');
+        profilePic.className = 'profile-pic';
+        if(person.image){
+          const img = document.createElement('img');
+          img.src = person.image;
+          img.alt = `${person.prenom} ${person.nom}`;
+          profilePic.appendChild(img);
+        } else {
+          const initials = ((person.prenom||'')[0]||'') + ((person.nom||'')[0]||'');
+          profilePic.textContent = initials.toUpperCase();
+        }
+
+        const titleBlock = document.createElement('div');
+        titleBlock.className = 'card-title';
+        const name = document.createElement('h3');
+        name.textContent = `${person.prenom} ${person.nom}`;
+        const meta = document.createElement('div');
+        meta.className = 'meta';
+        meta.textContent = `${person.profession}`;
+        titleBlock.appendChild(name);
+        titleBlock.appendChild(meta);
+
+        header.appendChild(profilePic);
+        header.appendChild(titleBlock);
+
+        const body = document.createElement('div');
+        body.className = 'card-body';
+        
+        const diplomeLabel = document.createElement('div');
+        diplomeLabel.className = 'label';
+        diplomeLabel.textContent = 'Diplôme';
+        const diplomeValue = document.createElement('div');
+        diplomeValue.textContent = person.diplome || '—';
+
+        const commentLabel = document.createElement('div');
+        commentLabel.className = 'label';
+        commentLabel.textContent = 'À propos';
+        const commentValue = document.createElement('div');
+        commentValue.textContent = person.commentaire || '—';
+
+        body.appendChild(diplomeLabel);
+        body.appendChild(diplomeValue);
+        body.appendChild(commentLabel);
+        body.appendChild(commentValue);
+
+        card.appendChild(header);
+        card.appendChild(body);
+
+        return card;
+      }
+
+      // Render citizens
+      for(const citizen of citizens){
+        citizensGrid.appendChild(createCard(citizen));
+      }
+
+      // Render experts
+      for(const expert of experts){
+        expertsGrid.appendChild(createCard(expert));
+      }
+
+    })().catch(err=>{
+      console.error(err);
+      document.getElementById('citizens-grid').innerHTML = '<div style="color:var(--muted)">Erreur lors du chargement des données. Servez le site via un serveur statique.</div>';
+    });
+  </script>
+</body>
+</html>

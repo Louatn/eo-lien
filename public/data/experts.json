@@ -1,0 +1,74 @@
+[
+    {
+        "nom": "Durand",
+        "prenom": "Marie",
+        "profession": "Médecin généraliste",
+        "image": null,
+        "age": 34,
+        "diplome": "Doctorat en médecine",
+        "commentaire": "Travaille en cabinet rural, passionnée par la pédiatrie."
+    },
+    {
+        "nom": "Petit",
+        "prenom": "Lucas",
+        "profession": "Développeur web",
+        "image": null,
+        "age": 27,
+        "diplome": "Licence informatique",
+        "commentaire": "Spécialiste JavaScript et Node.js, fan d'open-source."
+    },
+    {
+        "nom": "Nguyen",
+        "prenom": "Anh",
+        "profession": "Étudiant",
+        "image": null,
+        "age": 22,
+        "diplome": "Licence (en cours)",
+        "commentaire": "Prépare un mémoire sur les migrations contemporaines."
+    },
+    {
+        "nom": "Martin",
+        "prenom": "Sophie",
+        "profession": "Architecte",
+        "image": null,
+        "age": 41,
+        "diplome": "Diplôme d'État d'architecte",
+        "commentaire": "Travaille sur des projets d'habitat durable."
+    },
+    {
+        "nom": "Lopez",
+        "prenom": "Carlos",
+        "profession": "Chef cuisinier",
+        "image": null,
+        "age": 38,
+        "diplome": "CAP cuisine",
+        "commentaire": "Cuisine fusion, propriétaire d'un petit restaurant."
+    },
+    {
+        "nom": "Bernard",
+        "prenom": "Claire",
+        "profession": "Enseignante",
+        "image": null,
+        "age": 29,
+        "diplome": "Master en enseignement",
+        "commentaire": "Professeure de lycée professionnel, impliquée dans l'éducation inclusive."
+    },
+    {
+        "nom": "Rossi",
+        "prenom": "Marco",
+        "profession": "Journaliste",
+        "image": null,
+        "age": 33,
+        "diplome": "Licence en journalisme",
+        "commentaire": "Couvre l'actualité culturelle et les festivals locaux."
+    },
+    {
+        "nom": "Khan",
+        "prenom": "Aisha",
+        "profession": "Ingénieure",
+        "image": null,
+        "age": 30,
+        "diplome": "Master en génie civil",
+        "commentaire": "Travaille sur des projets d'infrastructures urbaines résilientes."
+    }
+]
