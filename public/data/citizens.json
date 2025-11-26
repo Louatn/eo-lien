@@ -84,7 +84,7 @@
         "nom": "Tabouret",
         "prenom": "Le",
         "profession": "Chercheur en nanofibre iodées",
-        "image": "./data/images/babouchka.jpg",
+        "image": "./data/images/tabouret.png",
         "age": 0.2,
         "diplome": "ASSR1 et/ou 2",
         "commentaire": "Asseyez vous s'il vous plaît."
