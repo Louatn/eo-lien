@@ -81,7 +81,7 @@ export default function About() {
   return (
     <main style={{ maxWidth: '1100px' }}>
       <div className="intro">
-        <h1>À propos d'ÉolienHub</h1>
+        <h1>À propos d'ÉO-LIEN</h1>
         <p>
           ÉolienHub est une plateforme collaborative dédiée aux discussions hebdomadaires sur les enjeux de société,
           la transition écologique et le développement durable. Chaque semaine, citoyens et experts échangent sur des thématiques variées

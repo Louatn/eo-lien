@@ -10,8 +10,8 @@ export default function Header() {
     <header>
       <div className="brand">
         <Link href="/" className="logo" aria-label="Retour à l’accueil">
-          <div className="mark">ÉH</div>
-          <div className="title">ÉolienHub</div>
+          <div className="mark">EL</div>
+          <div className="title">EO-LIEN</div>
         </Link>
       </div>
       <nav style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>

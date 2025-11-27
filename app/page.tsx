@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 interface Message {
   auteur_id: number;
@@ -101,6 +102,9 @@ export default function Home() {
   }
 
   const week = discussions[currentWeek - 1] || discussions.find(d => String(d.semaine) === String(currentWeek));
+  const summaryQuery = {
+    semaine: String(week?.semaine || currentWeek),
+  };
 
   return (
     <>
@@ -111,6 +115,15 @@ export default function Home() {
             <div className="topo-date">{week?.date || ''}</div>
           </div>
           <p className="topo-content">{week?.topo || 'Aucune discussion trouvée pour cette semaine.'}</p>
+          <div className="topo-actions">
+            <Link
+              href={{ pathname: '/summary', query: summaryQuery }}
+              className="summary-btn"
+              aria-label={`Voir le résumé de la semaine ${summaryQuery.semaine}`}
+            >
+              Voir le résumé
+            </Link>
+          </div>
         </div>
 
         <section className="messages">
