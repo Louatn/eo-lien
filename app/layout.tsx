@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "./context/ThemeContext";
-import Header from "./components/Header";
-import AdBanners from "./components/AdBanners";
 import AppShell from "./components/AppShell";
 import "./globals.css";
 
