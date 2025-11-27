@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "image": "./data/images/beberbar.jpg",
+        "nom": "Pack Énergie"
+    },
+    {
+        "id": 2,
+        "image": "./data/images/cemos2000.png",
+        "nom": "Offre Bien-être"
+    },
+    {
+        "id": 3,
+        "image": "./data/images/chameau.jpg",
+        "nom": "Kit Découverte"
+    },
+    {
+        "id": 4,
+        "image": "./data/images/cemosimplantations.png",
+        "nom": "Formule Premium"
+    },
+    {
+        "id": 5,
+        "image": "./data/images/gateau.jpg",
+        "nom": "Édition Limitée"
+    },
+    {
+        "id": 6,
+        "image": "./data/images/cindy.jpg",
+        "nom": "Cure Detox"
+    },
+    {
+        "id": 7,
+        "image": "./data/images/mcdo.jpg",
+        "nom": "Pack Yoga"
+    },
+    {
+        "id": 8,
+        "image": "./data/images/mainguypoumons.png",
+        "nom": "Programme Zen"
+    },
+    {
+        "id": 9,
+        "image": "./data/images/zazzo.png",
+        "nom": "Évasion Spa"
+    }
+]

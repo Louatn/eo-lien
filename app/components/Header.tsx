@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useTheme } from "../context/ThemeContext";
 
 export default function Header() {
-  const { theme, toggleTheme } = useTheme();
+  const { theme, toggleTheme, showAds, toggleAds } = useTheme();
 
   return (
     <header>
@@ -22,6 +22,13 @@ export default function Header() {
         >
           <span className="theme-badge">{theme}</span>
           {theme === 'BB' ? '→ Mode Noir' : '→ Mode Blanc'}
+        </button>
+        <button
+          className="theme-toggle"
+          onClick={toggleAds}
+          aria-label={showAds ? 'Masquer les publicités' : 'Afficher les publicités'}
+        >
+          {showAds ? '🛑 Masquer pubs' : '📢 Afficher pubs'}
         </button>
         <Link href="/about">qui‑sommes‑nous ?</Link>
       </nav>

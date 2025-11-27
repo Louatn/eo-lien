@@ -1,24 +1,21 @@
 import type { Metadata } from "next";
-import "./globals.css";
-import Header from "./components/Header";
 import { ThemeProvider } from "./context/ThemeContext";
+import Header from "./components/Header";
+import AdBanners from "./components/AdBanners";
+import AppShell from "./components/AppShell";
+import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "ÉolienHub — Discussions hebdomadaires",
-  description: "Plateforme collaborative dédiée aux discussions hebdomadaires sur les enjeux de société",
+  title: "EO-LIEN",
+  description: "Plateforme collaborative de discussion citoyenne",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr">
       <body>
         <ThemeProvider>
-          <Header />
-          {children}
+          <AppShell>{children}</AppShell>
         </ThemeProvider>
       </body>
     </html>
