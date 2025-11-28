@@ -49,6 +49,14 @@ body {
   line-height: 1.5;
 }
 
+body:has(.homepage) {
+  background: transparent;
+}
+
+body:not(:has(.homepage)) {
+  background: var(--bg);
+}
+
 header {
   display: flex;
   align-items: center;
@@ -170,6 +178,33 @@ main:not(.homepage) {
 .summary-btn:active {
   transform: translateY(0);
   box-shadow: 0 1px 3px rgba(14, 165, 255, 0.16);
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--card);
+  color: var(--text);
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease;
+  margin-bottom: 16px;
+}
+
+.back-btn:hover {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.back-btn:active {
+  transform: translateY(0);
 }
 
 .messages {

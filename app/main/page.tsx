@@ -67,6 +67,16 @@ export default function Home() {
 
         setAuthors(authorsMap);
         setDiscussions(discussionsData);
+        
+        // Load current week from localStorage
+        const savedWeek = localStorage.getItem('semaineId');
+        if (savedWeek) {
+          const weekNum = parseInt(savedWeek, 10);
+          if (weekNum >= 1 && weekNum <= 12) {
+            setCurrentWeek(weekNum);
+          }
+        }
+        
         setLoading(false);
       } catch (error) {
         console.error('Error loading data:', error);
@@ -93,6 +103,11 @@ export default function Home() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [currentWeek]);
 
+  // Save current week to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem('semaineId', String(currentWeek));
+  }, [currentWeek]);
+
   if (loading) {
     return (
       <main>
@@ -102,9 +117,6 @@ export default function Home() {
   }
 
   const week = discussions[currentWeek - 1] || discussions.find(d => String(d.semaine) === String(currentWeek));
-  const summaryQuery = {
-    semaine: String(week?.semaine || currentWeek),
-  };
 
   return (<>    
       <main>
@@ -116,9 +128,9 @@ export default function Home() {
           <p className="topo-content">{week?.topo || 'Aucune discussion trouvée pour cette semaine.'}</p>
           <div className="topo-actions">
             <Link
-              href={{ pathname: '/summary', query: summaryQuery }}
+              href="/summary"
               className="summary-btn"
-              aria-label={`Voir le résumé de la semaine ${summaryQuery.semaine}`}
+              aria-label={`Voir le résumé de la semaine ${currentWeek}`}
             >
               Voir le résumé
             </Link>

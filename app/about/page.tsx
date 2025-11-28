@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import BackButton from '../components/BackButton';
 
 interface Person {
   id?: number;
@@ -80,6 +81,7 @@ export default function About() {
 
   return (
     <main style={{ maxWidth: '1100px' }}>
+      <BackButton />
       <div className="intro">
         <h1>À propos d'ÉO-LIEN</h1>
         <p>
