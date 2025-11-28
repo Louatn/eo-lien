@@ -3,19 +3,6 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
-interface Message {
-  auteur_id: number;
-  heure: string;
-  message: string;
-}
-
-interface Discussion {
-  semaine: string;
-  date: string;
-  topo: string;
-  messages: Message[];
-}
-
 interface Person {
   id?: number;
   nom: string;
@@ -27,46 +14,24 @@ interface Person {
   commentaire: string;
 }
 
-export default function Home() {
-  const [discussions, setDiscussions] = useState<Discussion[]>([]);
-  const [authors, setAuthors] = useState<Map<number, Person>>(new Map());
-  const [currentWeek, setCurrentWeek] = useState(1);
+export default function HomePage() {
+  const [citizens, setCitizens] = useState<Person[]>([]);
+  const [experts, setExperts] = useState<Person[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function loadData() {
       try {
-        const [citizensResp, expertsResp, discussionsResp] = await Promise.all([
+        const [citizensResp, expertsResp] = await Promise.all([
           fetch('/data/citizens.json'),
           fetch('/data/experts.json'),
-          fetch('/data/discussion.json'),
         ]);
 
-        const citizens: Person[] = await citizensResp.json();
-        const experts: Person[] = await expertsResp.json();
-        const discussionsData: Discussion[] = await discussionsResp.json();
+        const citizensData: Person[] = await citizensResp.json();
+        const expertsData: Person[] = await expertsResp.json();
 
-        // Build authors map
-        const authorsMap = new Map<number, Person>();
-        let maxId = 0;
-
-        // Add citizens with their IDs
-        for (const c of citizens) {
-          if (typeof c.id === 'number' && c.id > maxId) maxId = c.id;
-        }
-        for (const c of citizens) {
-          if (c.id) authorsMap.set(c.id, c);
-        }
-
-        // Assign expert ids starting at maxId + 1
-        let nextExpertId = maxId + 1;
-        for (const e of experts) {
-          authorsMap.set(nextExpertId, { ...e, id: nextExpertId });
-          nextExpertId++;
-        }
-
-        setAuthors(authorsMap);
-        setDiscussions(discussionsData);
+        setCitizens(citizensData);
+        setExperts(expertsData);
         setLoading(false);
       } catch (error) {
         console.error('Error loading data:', error);
@@ -77,22 +42,6 @@ export default function Home() {
     loadData();
   }, []);
 
-  useEffect(() => {
-    function handleKeyDown(e: KeyboardEvent) {
-      if (e.key === 'ArrowLeft' && currentWeek > 1) {
-        setCurrentWeek(currentWeek - 1);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-      if (e.key === 'ArrowRight' && currentWeek < 12) {
-        setCurrentWeek(currentWeek + 1);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-    }
-
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [currentWeek]);
-
   if (loading) {
     return (
       <main>
@@ -101,79 +50,99 @@ export default function Home() {
     );
   }
 
-  const week = discussions[currentWeek - 1] || discussions.find(d => String(d.semaine) === String(currentWeek));
-  const summaryQuery = {
-    semaine: String(week?.semaine || currentWeek),
-  };
-
   return (
-    <>
-      <main>
-        <div className="topo">
-          <div className="week-title">
-            <h2>Semaine {week?.semaine || currentWeek}</h2>
-            <div className="topo-date">{week?.date || ''}</div>
-          </div>
-          <p className="topo-content">{week?.topo || 'Aucune discussion trouvée pour cette semaine.'}</p>
-          <div className="topo-actions">
-            <Link
-              href={{ pathname: '/summary', query: summaryQuery }}
-              className="summary-btn"
-              aria-label={`Voir le résumé de la semaine ${summaryQuery.semaine}`}
-            >
-              Voir le résumé
-            </Link>
-          </div>
-        </div>
-
-        <section className="messages">
-          {week?.messages.map((msg, idx) => {
-            const author = authors.get(msg.auteur_id);
-            const initials = author
-              ? ((author.prenom?.[0] || '') + (author.nom?.[0] || '')).toUpperCase()
-              : 'U';
-            const fullName = author
-              ? `${author.prenom || ''} ${author.nom || ''}`.trim()
-              : `Utilisateur #${msg.auteur_id}`;
-
-            return (
-              <article key={idx} className="msg">
-                <div className="avatar">
-                  {author?.image ? (
-                    <img src={author.image} alt={fullName} />
-                  ) : (
-                    initials
-                  )}
-                </div>
-                <div className="meta">
-                  <div className="who">
-                    {fullName}
-                    <span className="time">{msg.heure}</span>
-                  </div>
-                  <div className="text">{msg.message}</div>
-                </div>
-              </article>
-            );
-          })}
-        </section>
-      </main>
-
-      <div className="weekbar" aria-label="Sélection de la semaine">
-        {Array.from({ length: 12 }, (_, i) => i + 1).map((week) => (
-          <button
-            key={week}
-            className={`weekbtn ${week === currentWeek ? 'active' : ''}`}
-            onClick={() => {
-              setCurrentWeek(week);
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}
-          >
-            {week}
-          </button>
-        ))}
+    <main className="homepage">
+      {/* Background Video */}
+      <div className="bg-video-wrapper">
+        <video autoPlay loop muted playsInline className="bg-video">
+          <source src="/data/video/eoliene.mp4" type="video/mp4" />
+        </video>
       </div>
 
-      <footer />
-    </>
+      {/* Hero Section */}
+      <section className="hero-section">
+        <h1>Bienvenue sur EO-LIEN</h1>
+        <p className="hero-description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor 
+          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
+          irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
+          deserunt mollit anim id est laborum.
+        </p>
+        <Link href="/main" className="cta-button">
+          Accéder aux discussions
+        </Link>
+      </section>
+
+      {/* Participants Section */}
+      <section className="people-section">
+        <h2>Les Participants</h2>
+        <div className="people-grid">
+          {citizens.map((person, idx) => (
+            <div key={idx} className="person-card">
+              <div className="person-image-wrapper">
+                {person.image ? (
+                  <img 
+                    src={person.image} 
+                    alt={`${person.prenom} ${person.nom}`}
+                    className="person-image"
+                  />
+                ) : (
+                  <div className="person-placeholder">
+                    {person.prenom[0]}{person.nom[0]}
+                  </div>
+                )}
+                <div className="person-hover-card">
+                  <h3>{person.prenom} {person.nom}</h3>
+                  <p className="person-profession">{person.profession}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <p className="section-description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel risus nec 
+          turpis consectetur euismod. Vivamus facilisis justo vel augue blandit, at 
+          scelerisque nulla fringilla. Pellentesque habitant morbi tristique senectus et 
+          netus et malesuada fames ac turpis egestas.
+        </p>
+      </section>
+
+      {/* Professionals Section */}
+      <section className="people-section">
+        <h2>Les Professionnels</h2>
+        <div className="people-grid">
+          {experts.map((person, idx) => (
+            <div key={idx} className="person-card">
+              <div className="person-image-wrapper">
+                {person.image ? (
+                  <img 
+                    src={person.image} 
+                    alt={`${person.prenom} ${person.nom}`}
+                    className="person-image"
+                  />
+                ) : (
+                  <div className="person-placeholder">
+                    {person.prenom[0]}{person.nom[0]}
+                  </div>
+                )}
+                <div className="person-hover-card expert-card">
+                  <h3>{person.prenom} {person.nom}</h3>
+                  <p className="person-profession">{person.profession}</p>
+                  <p className="person-comment">{person.commentaire}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <p className="section-description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae nunc 
+          sed libero venenatis dignissim. Proin in velit ac tortor hendrerit vehicula. 
+          Suspendisse potenti. Integer euismod dui eu lorem tincidunt, vel convallis 
+          mauris feugiat. Nullam ac sapien nec magna vestibulum fringilla.
+        </p>
+      </section>
+    </main>
   );
 }
