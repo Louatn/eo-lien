@@ -1,37 +1,40 @@
-/* Theme BB (Blanc-Bleu) - Default */
-:root,
-[data-theme="BB"] {
-  --bg: #f5f7fb;
-  --panel: #ffffff;
-  --panel-rgb: 255, 255, 255;
-  --muted: #6b7280;
-  --accent: #0ea5ff;
-  --card: #ffffff;
-  --border: #e6eef8;
-  --text: #0f1724;
-  --text-secondary: #555;
-  --avatar-bg: #e6f7ff;
-  --header-gradient-start: #ffffff;
-  --header-gradient-end: #f8fbff;
-  --header-border: #e6eef8;
+/* Theme variables: Light & Dark */
+:root {
   --ads-offset: 90px; /* Décalage vertical des publicités */
 }
 
-/* Theme NO (Noir-Orange) */
-[data-theme="NO"] {
-  --bg: #0b0b0b;
-  --panel: #141414;
-  --panel-rgb: 20, 20, 20;
-  --muted: #bfbfbf;
-  --accent: #ff9900;
-  --card: #141414;
-  --border: #222;
-  --text: #ffffff;
-  --text-secondary: #ddd;
-  --avatar-bg: #222;
-  --header-gradient-start: #0b0b0b;
-  --header-gradient-end: #0f0f0f;
-  --header-border: #1a1a1a;
+/* Mode clair proposé */
+html[data-theme="light"] {
+  --bg: #F9F7F1;                 /* Fond principal (Ivoire doux) */
+  --panel: #FFFFFF;              /* Panneaux/cards */
+  --panel-rgb: 255, 255, 255;
+  --card: #FFFFFF;
+  --border: #E6EAE2;            /* Bordure douce adaptée au fond ivoire */
+  --text: #3C4A3A;              /* Texte principal (Vert forêt doux) */
+  --text-secondary: #5E6B5C;    /* Variante plus douce pour paragraphes */
+  --muted: #A2B29A;             /* Couleur secondaire (Vert grisé clair) */
+  --accent: #60B08E;            /* Accent (Vert sauge) */
+  --avatar-bg: #EAF3EE;         /* BG avatar en clair, teinte verte */
+  --header-gradient-start: #FFFFFF;
+  --header-gradient-end: #F3F1EB;
+  --header-border: #E6EAE2;
+}
+
+/* Mode sombre proposé */
+html[data-theme="dark"] {
+  --bg: #172A23;                 /* Fond principal (Vert forêt très sombre) */
+  --panel: #1D332C;              /* Panneaux/cards foncés */
+  --panel-rgb: 29, 51, 44;
+  --card: #1D332C;
+  --border: #26453C;             /* Bordure adaptée au fond sombre */
+  --text: #DFF2E2;               /* Texte principal (Vert pâle doux) */
+  --text-secondary: #B9D7C8;     /* Variante douce */
+  --muted: #5D7D70;              /* Couleur secondaire (Vert ardoise) */
+  --accent: #8BC34A;             /* Accent (Vert pomme/lime) */
+  --avatar-bg: #254238;          /* BG avatar en sombre */
+  --header-gradient-start: #1D332C;
+  --header-gradient-end: #14261F;
+  --header-border: #26453C;
 }
 
 * {

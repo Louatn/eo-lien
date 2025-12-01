@@ -24,7 +24,7 @@
         "image": "./data/images/experts/jordan.jpeg",
         "age": 31,
         "diplome": "Licence en mathématiques et master en économie",
-        "commentaire": "Prépare un mémoire sur les migrations contemporaines."
+        "commentaire": "Travaille dans une banque d'affaire et intervient régulièrement dans les médias sur les questions économiques."
     },
     {
         "nom": "Thomas",
@@ -32,8 +32,8 @@
         "profession": "Fondateur 'Les Éoliens génés'",
         "image": "./data/images/experts/joseph.jpeg",
         "age": 59,
-        "diplome": "Diplôme d'État d'architecte",
-        "commentaire": "Travaille sur des projets d'habitat durable."
+        "diplome": "Bac",
+        "commentaire": "A créé une association qui milite contre l'implantation d'éoliennes"
     },
     {
         "nom": "Robert",

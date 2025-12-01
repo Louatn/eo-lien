@@ -21,7 +21,7 @@ export default function Header() {
           aria-label="Changer de thème"
         >
           <span className="theme-badge">{theme}</span>
-          {theme === 'BB' ? '→ Mode Noir' : '→ Mode Blanc'}
+          {theme === 'light' ? '→ Mode sombre' : '→ Mode clair'}
         </button>
         <button
           className="theme-toggle"

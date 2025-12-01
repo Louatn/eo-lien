@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
-type Theme = 'NO' | 'BB';
+type Theme = 'light' | 'dark';
 
 interface ThemeContextType {
   theme: Theme;
@@ -14,16 +14,13 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<Theme>('BB');
+  const [theme, setTheme] = useState<Theme>('light');
   const [showAds, setShowAds] = useState<boolean>(true);
 
   useEffect(() => {
-    // Load theme from localStorage
-    const savedTheme = localStorage.getItem('theme') as Theme | null;
+    const savedTheme = (localStorage.getItem('theme') as Theme) || 'light';
     const savedAds = localStorage.getItem('showAds');
-    if (savedTheme === 'NO' || savedTheme === 'BB') {
-      setTheme(savedTheme);
-    }
+    setTheme(savedTheme);
     if (savedAds === 'false') {
       setShowAds(false);
     }
@@ -40,7 +37,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   }, [showAds]);
 
   const toggleTheme = () => {
-    setTheme(prev => prev === 'BB' ? 'NO' : 'BB');
+    setTheme(prev => (prev === 'light' ? 'dark' : 'light'));
   };
 
   const toggleAds = () => {
