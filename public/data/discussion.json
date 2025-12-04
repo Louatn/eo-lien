@@ -12,7 +12,60 @@
             { "auteur_id": 5, "heure": "09:37", "message": "Il faut aussi penser à la prise en charge financière des déplacements." },
             { "auteur_id": 7, "heure": "09:45", "message": "La coordination entre médecins et services sociaux est essentielle." },
             { "auteur_id": 8, "heure": "09:52", "message": "Des permanences mobiles pourraient réduire les délais d'attente." },
-            { "auteur_id": 2, "heure": "10:30", "message": "Des partenariats entre communes pourraient mutualiser les ressources." },
+            [
+                {
+                    "acte": "1",
+                    "date": "2025-11-12",
+                    "topo": "Accès aux soins en zone rurale",
+                    "messages": [
+                        { "auteur_id": 1, "heure": "09:00", "message": "Bonjour à tous, je lance le sujet." },
+                        { "auteur_id": 2, "heure": "09:07", "message": "Les applications pourraient aider à coordonner les rendez-vous et le transport." },
+                        { "auteur_id": 6, "heure": "09:15", "message": "Dans mon lycée pro, je vois des élèves qui renoncent aux soins faute de mobilité." },
+                        { "auteur_id": 3, "heure": "09:22", "message": "On pourrait organiser des navettes locales pour les consultations programmées." },
+                        { "auteur_id": 4, "heure": "09:30", "message": "Les infirmières rurales ont souvent des plannings surchargés." },
+                        { "auteur_id": 5, "heure": "09:37", "message": "Il faut aussi penser à la prise en charge financière des déplacements." },
+                        { "auteur_id": 7, "heure": "09:45", "message": "La coordination entre médecins et services sociaux est essentielle." },
+                        { "auteur_id": 8, "heure": "09:52", "message": "Des permanences mobiles pourraient réduire les délais d'attente." },
+                        { "auteur_id": 2, "heure": "10:30", "message": "Des partenariats entre communes pourraient mutualiser les ressources." },
+                        { "auteur_id": 6, "heure": "10:38", "message": "Impliquer les écoles pour la prévention et l'information peut aider." }
+                    ]
+                },
+                {
+                    "acte": "2",
+                    "date": "2025-11-19",
+                    "topo": "Transport et logistique du dernier kilomètre",
+                    "messages": [
+                        { "auteur_id": 7, "heure": "10:00", "message": "Sur les festivals, on a souvent des soucis d'acheminement de matériel." },
+                        { "auteur_id": 8, "heure": "10:12", "message": "Côté infrastructures, les pistes cyclables réduisent la pression sur la voirie." },
+                        { "auteur_id": 3, "heure": "10:25", "message": "Les migrations pendulaires compliquent la planification des transports." },
+                        { "auteur_id": 1, "heure": "10:33", "message": "Des hubs logistiques locaux pourraient centraliser les livraisons." },
+                        { "auteur_id": 4, "heure": "10:40", "message": "Le recours aux véhicules électriques demande des bornes de recharge." },
+                        { "auteur_id": 5, "heure": "10:48", "message": "La coordination avec les producteurs locaux est clé pour les circuits courts." },
+                        { "auteur_id": 6, "heure": "10:55", "message": "Le dernier kilomètre est souvent le plus coûteux pour les entreprises." },
+                        { "auteur_id": 7, "heure": "11:03", "message": "Des services de livraison partagée pourraient réduire les trajets." },
+                        { "auteur_id": 8, "heure": "11:10", "message": "Penser aux solutions multimodales (vélo + train)." },
+                        { "auteur_id": 2, "heure": "11:48", "message": "Tester des plateformes locales de mise en relation transport/charges." },
+                        { "auteur_id": 3, "heure": "11:55", "message": "Évaluer l'impact environnemental des options choisies." }
+                    ]
+                },
+                {
+                    "acte": "3",
+                    "date": "2025-11-26",
+                    "topo": "Télémedecine et consultations à distance",
+                    "messages": [
+                        { "auteur_id": 4, "heure": "09:05", "message": "La téléconsultation facilite l'accès pour les personnes âgées isolées." },
+                        { "auteur_id": 2, "heure": "09:20", "message": "Il faut penser à la confidentialité et à la formation des soignants." },
+                        { "auteur_id": 1, "heure": "09:43", "message": "Des espaces communs équipés peuvent pallier les problèmes de réseau." },
+                        { "auteur_id": 3, "heure": "09:50", "message": "La téléconsultation ne remplace pas toujours l'examen physique." },
+                        { "auteur_id": 5, "heure": "09:58", "message": "Des kits de télémédecine (oxymètre, tension) à prêter localement ?" },
+                        { "auteur_id": 6, "heure": "10:05", "message": "Assurer la sécurisation des données patients est primordial." },
+                        { "auteur_id": 7, "heure": "10:12", "message": "La facturation et le remboursement doivent être clairs pour les praticiens." },
+                        { "auteur_id": 8, "heure": "10:20", "message": "Penser à l'accessibilité pour les personnes en situation de handicap." },
+                        { "auteur_id": 2, "heure": "10:58", "message": "Encourager les retours d'expérience des patients et soignants." },
+                        { "auteur_id": 4, "heure": "11:05", "message": "Veiller à l'interopérabilité des outils entre établissements." }
+                    ]
+                }
+            ]
             { "auteur_id": 6, "heure": "10:38", "message": "Impliquer les écoles pour la prévention et l'information peut aider." }
         ]
     },
