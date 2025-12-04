@@ -85,10 +85,14 @@ export default function About() {
       <div className="intro">
         <h1>À propos d'ÉO-LIEN</h1>
         <p>
-          ÉolienHub est une plateforme collaborative dédiée aux discussions hebdomadaires sur les enjeux de société,
-          la transition écologique et le développement durable. Chaque semaine, citoyens et experts échangent sur des thématiques variées
-          — santé publique, mobilité, éducation, agroécologie, économie circulaire — afin de co-construire des solutions adaptées aux territoires.
-          Notre objectif est de favoriser le dialogue, de croiser les expertises et de rendre visibles les initiatives locales porteuses d'avenir.
+          Une Conférence de Consensus est un pari démocratique fort : elle confie à des citoyens tirés au sort la responsabilité de trancher un débat de société complexe. Ce site vous invite à suivre leur parcours à travers trois espaces de discussion, qui retracent les grandes étapes de leur réflexion.
+        </p>
+        <div className="warning-box">
+          <strong>⚠️ Bon à savoir :</strong>
+          <p>Ce que vous lirez ici est une sélection des échanges les plus marquants. Nous avons choisi ces moments clés pour résumer l'essence de 12 semaines de débats intenses.</p>
+        </div>
+        <p>
+          Il ne s'agit pas d'une simple discussion, mais d'un travail concret qui aboutit à la rédaction d'un rapport officiel et au vote de propositions décisives.
         </p>
       </div>
 

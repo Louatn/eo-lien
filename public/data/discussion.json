@@ -1,261 +1,148 @@
 [
     {
-        "semaine": "1",
+        "acte": "1",
         "date": "2025-11-12",
-        "topo": "Accès aux soins en zone rurale",
+        "topo": "Sujet : L'éolien, c'est du sérieux ou juste de la com' ?",
         "messages": [
-            { "auteur_id": 1, "heure": "09:00", "message": "Bonjour à tous, je lance le sujet." },
-            { "auteur_id": 2, "heure": "09:07", "message": "Les applications pourraient aider à coordonner les rendez-vous et le transport." },
-            { "auteur_id": 6, "heure": "09:15", "message": "Dans mon lycée pro, je vois des élèves qui renoncent aux soins faute de mobilité." },
-            { "auteur_id": 3, "heure": "09:22", "message": "On pourrait organiser des navettes locales pour les consultations programmées." },
-            { "auteur_id": 4, "heure": "09:30", "message": "Les infirmières rurales ont souvent des plannings surchargés." },
-            { "auteur_id": 5, "heure": "09:37", "message": "Il faut aussi penser à la prise en charge financière des déplacements." },
-            { "auteur_id": 7, "heure": "09:45", "message": "La coordination entre médecins et services sociaux est essentielle." },
-            { "auteur_id": 8, "heure": "09:52", "message": "Des permanences mobiles pourraient réduire les délais d'attente." },
-            [
-                {
-                    "acte": "1",
-                    "date": "2025-11-12",
-                    "topo": "Accès aux soins en zone rurale",
-                    "messages": [
-                        { "auteur_id": 1, "heure": "09:00", "message": "Bonjour à tous, je lance le sujet." },
-                        { "auteur_id": 2, "heure": "09:07", "message": "Les applications pourraient aider à coordonner les rendez-vous et le transport." },
-                        { "auteur_id": 6, "heure": "09:15", "message": "Dans mon lycée pro, je vois des élèves qui renoncent aux soins faute de mobilité." },
-                        { "auteur_id": 3, "heure": "09:22", "message": "On pourrait organiser des navettes locales pour les consultations programmées." },
-                        { "auteur_id": 4, "heure": "09:30", "message": "Les infirmières rurales ont souvent des plannings surchargés." },
-                        { "auteur_id": 5, "heure": "09:37", "message": "Il faut aussi penser à la prise en charge financière des déplacements." },
-                        { "auteur_id": 7, "heure": "09:45", "message": "La coordination entre médecins et services sociaux est essentielle." },
-                        { "auteur_id": 8, "heure": "09:52", "message": "Des permanences mobiles pourraient réduire les délais d'attente." },
-                        { "auteur_id": 2, "heure": "10:30", "message": "Des partenariats entre communes pourraient mutualiser les ressources." },
-                        { "auteur_id": 6, "heure": "10:38", "message": "Impliquer les écoles pour la prévention et l'information peut aider." }
-                    ]
-                },
-                {
-                    "acte": "2",
-                    "date": "2025-11-19",
-                    "topo": "Transport et logistique du dernier kilomètre",
-                    "messages": [
-                        { "auteur_id": 7, "heure": "10:00", "message": "Sur les festivals, on a souvent des soucis d'acheminement de matériel." },
-                        { "auteur_id": 8, "heure": "10:12", "message": "Côté infrastructures, les pistes cyclables réduisent la pression sur la voirie." },
-                        { "auteur_id": 3, "heure": "10:25", "message": "Les migrations pendulaires compliquent la planification des transports." },
-                        { "auteur_id": 1, "heure": "10:33", "message": "Des hubs logistiques locaux pourraient centraliser les livraisons." },
-                        { "auteur_id": 4, "heure": "10:40", "message": "Le recours aux véhicules électriques demande des bornes de recharge." },
-                        { "auteur_id": 5, "heure": "10:48", "message": "La coordination avec les producteurs locaux est clé pour les circuits courts." },
-                        { "auteur_id": 6, "heure": "10:55", "message": "Le dernier kilomètre est souvent le plus coûteux pour les entreprises." },
-                        { "auteur_id": 7, "heure": "11:03", "message": "Des services de livraison partagée pourraient réduire les trajets." },
-                        { "auteur_id": 8, "heure": "11:10", "message": "Penser aux solutions multimodales (vélo + train)." },
-                        { "auteur_id": 2, "heure": "11:48", "message": "Tester des plateformes locales de mise en relation transport/charges." },
-                        { "auteur_id": 3, "heure": "11:55", "message": "Évaluer l'impact environnemental des options choisies." }
-                    ]
-                },
-                {
-                    "acte": "3",
-                    "date": "2025-11-26",
-                    "topo": "Télémedecine et consultations à distance",
-                    "messages": [
-                        { "auteur_id": 4, "heure": "09:05", "message": "La téléconsultation facilite l'accès pour les personnes âgées isolées." },
-                        { "auteur_id": 2, "heure": "09:20", "message": "Il faut penser à la confidentialité et à la formation des soignants." },
-                        { "auteur_id": 1, "heure": "09:43", "message": "Des espaces communs équipés peuvent pallier les problèmes de réseau." },
-                        { "auteur_id": 3, "heure": "09:50", "message": "La téléconsultation ne remplace pas toujours l'examen physique." },
-                        { "auteur_id": 5, "heure": "09:58", "message": "Des kits de télémédecine (oxymètre, tension) à prêter localement ?" },
-                        { "auteur_id": 6, "heure": "10:05", "message": "Assurer la sécurisation des données patients est primordial." },
-                        { "auteur_id": 7, "heure": "10:12", "message": "La facturation et le remboursement doivent être clairs pour les praticiens." },
-                        { "auteur_id": 8, "heure": "10:20", "message": "Penser à l'accessibilité pour les personnes en situation de handicap." },
-                        { "auteur_id": 2, "heure": "10:58", "message": "Encourager les retours d'expérience des patients et soignants." },
-                        { "auteur_id": 4, "heure": "11:05", "message": "Veiller à l'interopérabilité des outils entre établissements." }
-                    ]
-                }
-            ]
-            { "auteur_id": 6, "heure": "10:38", "message": "Impliquer les écoles pour la prévention et l'information peut aider." }
+            { "auteur_id": 8, "type": "master", "heure": "09:00", "message": "Bonjour à toutes et à tous. Pour démarrer cette aventure, on va éviter la langue de bois. Oubliez les discours officiels. Spontanément, quand on vous dit \"éolien\", qu'est-ce qui vous vient en tête aujourd'hui ?" },
+            { "auteur_id": 4, "type": "citizen", "heure": "09:07", "message": "Si je dois être franc... pour moi, c'est surtout un truc un peu \"gadget\". J'ai l'impression qu'on en installe quelques-unes pour faire plaisir aux écolos, pour l'image, mais je doute que ça pèse vraiment lourd dans la production d'électricité." },
+            { "auteur_id": 9, "type": "citizen", "heure": "09:15", "message": "Je rejoins John sur le doute, mais pour une autre raison. Moi, c'est la stratégie globale qui m'inquiète. J'ai le sentiment que l'État veut tout miser sur l'éolien pour abandonner le nucléaire à terme. On a une énergie stable qui marche, pourquoi vouloir la remplacer par quelque chose qui dépend de la météo ? J'ai peur qu'on fragilise notre indépendance juste par idéologie." },
+            { "auteur_id": 7, "type": "citizen", "heure": "09:22", "message": "C'est vrai qu'on entend tout et son contraire. Est-ce qu'il faut beaucoup de vent ? Est-ce que ça s'arrête tout le temps ? On a du mal à savoir ce qui est vrai techniquement." },
+            { "auteur_id": 1, "type": "expert", "heure": "09:30", "message": "Je me permets d'intervenir pour poser quelques faits, ça aidera peut-être à y voir plus clair. John, rassurez-vous, ce n'est pas anecdotique. Une seule éolienne terrestre standard produit de quoi couvrir la consommation de plusieurs milliers de foyers, hors chauffage. C'est une vraie machine industrielle, pas un symbole." },
+            { "auteur_id": 1, "type": "expert", "heure": "09:33", "message": "Et pour répondre à votre crainte, Nicolas : la stratégie n'est pas d'opposer les deux. Le nucléaire assure la \"base\" (la production stable jour et nuit), et l'éolien vient en complément. L'idée, c'est d'économiser les ressources quand le vent souffle. Ils sont \"colocataires\" sur le réseau, pas ennemis." },
+            { "auteur_id": 9, "type": "citizen", "heure": "09:38", "message": "Attendez, je veux être sûr de suivre ce que vous expliquez. Donc l'objectif n'est pas de fermer des centrales à terme, pour les remplacer par des éoliennes, mais de les faire tourner ensemble ?" },
+            { "auteur_id": 1, "type": "expert", "heure": "09:40", "message": "C'est exactement ça. C'est ce qu'on appelle le mix énergétique. L'un ne va pas sans l'autre aujourd'hui." },
+            { "auteur_id": 9, "type": "citizen", "heure": "09:45", "message": "Bon... Je partais vraiment du principe qu'on voulait substituer l'un à l'autre. Si la réalité technique, c'est la complémentarité pour soulager le réseau, je veux bien retirer ma critique initiale. Ça change pas mal ma perspective." },
+            { "auteur_id": 1, "type": "expert", "heure": "09:50", "message": "(montre des graphiques et donne des chiffres qui prouvent que les éoliennes servent à la France comme toute autre source d'énergie)" },
+            { "auteur_id": 4, "type": "citizen", "heure": "09:55", "message": "Moi aussi, je suis assez bluffé par les chiffres de production que Bernard a montrés. J'avais cette image du \"gadget\" décoratif... Là, je me dis qu'au moins techniquement, c'est plus sérieux que ce que j'avais en tête." },
+            { "auteur_id": 8, "type": "master", "heure": "10:02", "message": "On avance alors. Nous avons donc un premier consensus technique : l'outil produit vraiment et il a sa place aux côtés du nucléaire. La question de l'utilité est réglée. Mais est-ce que ça suffit pour que les gens l'acceptent en bas de chez eux ?" },
+            {
+            "auteur_id": 8,
+            "type": "master",
+            "heure": "09:00",
+            "message": "Passons au concret. Nous avons entendu le témoignage d’un élu local. Qu’est-ce que son expérience sur les finances communales vous inspire ?"
+        },
+        {
+            "auteur_id": 2,
+            "type": "expert",
+            "heure": "09:05",
+            "message": "Chez nous, c’était une question de survie. Les taxes perçues grâce au parc éolien ont financé la rénovation de la salle des sports et sauvé des commerces qui allaient fermer. Sans cet argent, ma commune n’avait plus aucune marge de manœuvre."
+        },
+        {
+            "auteur_id": 6,
+            "type": "citizen",
+            "heure": "09:12",
+            "message": "J’avoue que cet argument me fait réfléchir. À la base, je trouve les éoliennes laides, ça gâche la vue, ça fait du bruit… Mais si ça permet à des villages ruraux de ne pas mourir économiquement… je dois revoir mon jugement. Je ne dis pas que je suis « pour », mais je comprends mieux l’intérêt. Je suis un peu moins braqué même si, selon moi, les éoliennes restent assez « inutiles »."
+        },
+        {
+            "auteur_id": 8,
+            "type": "citizen",
+            "heure": "09:18",
+            "message": "Pardon, mais je ne suis pas d’accord. On ne peut pas tout acheter avec un chèque. Mes parents vivent en Vendée près d’un parc : l’argent de la mairie, ils ne le voient pas. Par contre, les clignotants rouges, ils les voient toute la nuit par la fenêtre. Pour eux, la nuisance est réelle, peu importe le budget de la commune."
+        },
+        {
+            "auteur_id": 4,
+            "type": "expert",
+            "heure": "09:24",
+            "message": "Merci Marie-Jacqueline, c’est exactement ça ! Le problème de fond, ce n’est pas le montant du chèque, c’est la démocratie. On nous organise des « réunions de concertation » une fois que tout est déjà signé et validé financièrement."
+        },
+        {
+            "auteur_id": 4,
+            "type": "expert",
+            "heure": "09:27",
+            "message": "C’est ça qui rend les gens furieux. Ils refusent souvent non pas par principe contre l’éolien, mais parce qu’ils ont l’impression que tout leur échappe, qu’on décide pour eux. Tu peux arroser la commune d’argent, ça ne règle pas ce sentiment de mépris perçu par les habitants."
+        },
+        {
+            "auteur_id": 7,
+            "type": "citizen",
+            "heure": "09:33",
+            "message": "C’est hyper intéressant ce que vous dites. Je pensais que le blocage venait juste du bruit ou du paysage. Mais en vous écoutant, je réalise que c’est surtout un problème de gouvernance. Si les habitants ne sont pas associés dès le tout début, la confiance est brisée, argent ou pas."
+        },
+        {
+            "auteur_id": 1,
+            "type": "expert",
+            "heure": "09:40",
+            "message": "Je comprends la demande de concertation. Mais attention : si on met des critères trop stricts et qu’on doit avoir l’accord de tout le monde avant de bouger, on risque de se priver de sites très performants pour le réseau. On a des impératifs de production aussi."
+        },
+        {
+            "auteur_id": 4,
+            "type": "expert",
+            "heure": "09:45",
+            "message": "Peut-être, Bernard. Mais si votre seule logique c’est la performance technique qui écrase l’avis local, alors nous resterons dans le conflit. On ne peut pas imposer le progrès aux forceps comme vous le faites bien trop souvent."
+        }
+        
         ]
     },
+
     {
-        "semaine": "2",
+        "acte": "2",
         "date": "2025-11-19",
-        "topo": "Transport et logistique du dernier kilomètre",
+        "topo": "Économie vs Écologie vs Démocratie – Semaines 5 à 8",
         "messages": [
-            { "auteur_id": 7, "heure": "10:00", "message": "Sur les festivals, on a souvent des soucis d’acheminement de matériel." },
-            { "auteur_id": 8, "heure": "10:12", "message": "Côté infrastructures, les pistes cyclables réduisent la pression sur la voirie." },
-            { "auteur_id": 3, "heure": "10:25", "message": "Les migrations pendulaires compliquent la planification des transports." },
-            { "auteur_id": 1, "heure": "10:33", "message": "Des hubs logistiques locaux pourraient centraliser les livraisons." },
-            { "auteur_id": 4, "heure": "10:40", "message": "Le recours aux véhicules électriques demande des bornes de recharge." },
-            { "auteur_id": 5, "heure": "10:48", "message": "La coordination avec les producteurs locaux est clé pour les circuits courts." },
-            { "auteur_id": 6, "heure": "10:55", "message": "Le dernier kilomètre est souvent le plus coûteux pour les entreprises." },
-            { "auteur_id": 7, "heure": "11:03", "message": "Des services de livraison partagée pourraient réduire les trajets." },
-            { "auteur_id": 8, "heure": "11:10", "message": "Penser aux solutions multimodales (vélo + train)." },
-            { "auteur_id": 2, "heure": "11:48", "message": "Tester des plateformes locales de mise en relation transport/charges." },
-            { "auteur_id": 3, "heure": "11:55", "message": "Évaluer l'impact environnemental des options choisies." }
-        ]
+            { "auteur_id": 8, "type": "master", "heure": "09:00", "message": "Entrons maintenant dans le cœur politique du sujet. Je sens une réticence chez certains d'entre vous qui pensent que l'éolien est superflu en France, puisque nous avons déjà un parc nucléaire puissant. C'est le moment de confronter ces deux visions : est-ce qu'on s'obstine pour rien, ou est-ce qu'il y a une vraie logique ?" },
+            { "auteur_id": 9, "type": "citizen", "heure": "09:08", "message": "Je ne vais pas tourner autour du pot, c'est ce que je pense depuis le début. Le nucléaire, c'est pilotable, ça marche tout le temps, qu'il pleuve ou qu'il vente. Alors pourquoi s'embêter à couvrir la France de mâts qui ne tournent pas la moitié du temps ? J'ai vraiment peur qu'on fragilise notre réseau électrique juste pour se donner une image \"verte\"." },
+            { "auteur_id": 1, "type": "expert", "heure": "09:15", "message": "Je comprends tout à fait que ça puisse paraître illogique vu de l'extérieur, Nicolas. Mais opposer les deux est une erreur stratégique. Le nucléaire est excellent pour faire la \"base\", c'est-à-dire la production stable et continue. Par contre, il est assez rigide. L'éolien vient en complément : il permet d'économiser l'eau des barrages et le combustible nucléaire dès que le vent souffle assez fort pour produire." },
+            { "auteur_id": 1, "type": "expert", "heure": "09:18", "message": "Il faut regarder le plan global : l'objectif n'est pas de fermer des centrales nucléaires pour les remplacer par des éoliennes. L'objectif, c'est d'avoir les deux pour réussir à se passer du charbon et du gaz qu'on est encore obligés d'importer en hiver. C'est une stratégie de diversification, pas de substitution." },
+            { "auteur_id": 9, "type": "citizen", "heure": "09:24", "message": "Vu comme ça... c'est différent. Si vous me garantissez que l'éolien sert à arrêter les centrales à gaz et pas à démanteler le nucléaire, je peux l'accepter dans le \"mix\". Je ne suis pas contre la diversification, je suis contre l'affaiblissement de ce qu'on a déjà et qu'on maîtrise pleinement." },
+            { "auteur_id": 8, "type": "citizen", "heure": "09:30", "message": "Je veux bien entendre l'argument du mix énergétique national. Mais sur le terrain, on a quand même l'impression que c'est toujours les mêmes territoires ruraux qui doivent se \"sacrifier\" pour fournir l'énergie aux grandes villes. C'est cette injustice géographique qui passe mal." },
+            { "auteur_id": 8, "type": "master", "heure": "09:35", "message": "Vous mettez le doigt sur un point très dur, Marie-Jacqueline. L'intérêt national se heurte violemment au sentiment d'injustice locale. Comment faire pour rendre ce sacrifice acceptable pour ceux qui vivent à côté ? Et peut-on vraiment réussir à rendre acceptable ?" },
+            { "auteur_id": 8, "type": "master", "heure": "10:05", "message": "Parlons franchement, sans tabou. Si une commune accepte d'accueillir des éoliennes pour l'intérêt national, que doit-elle recevoir en échange ? Est-ce qu'un chèque suffit à faire passer la pilule ?" },
+            { "auteur_id": 2, "type": "expert", "heure": "10:10", "message": "Il faut être réaliste. On ne parle pas juste d'un chèque, on parle de survie pour certaines communes. Les taxes éoliennes financent les écoles, la rénovation de la salle des sports, l'entretien des routes. Pour des villages qui se meurent et n'ont plus de budget, c'est vital. C'est un échange pragmatique : une nuisance visuelle contre des services publics maintenus. Un mal pour un bien, mais l'un pèse souvent plus lourd dans la balance que l'autre." },
+            { "auteur_id": 4, "type": "expert", "heure": "10:16", "message": "Je ne supporte plus cet argument ! Vous parlez d'acheter le silence, ni plus ni moins. Tu peux refaire le trottoir de la mairie en marbre si tu veux, ça ne change pas le fait que mon horizon est barré par des machines industrielles. L'argent ne règle pas la perte de qualité de vie, ni le sentiment qu'on nous a imposé ça." },
+            { "auteur_id": 2, "type": "expert", "heure": "10:22", "message": "Joseph a raison sur un point crucial : c'est l'opacité qui crée la colère. Aujourd'hui, les gens ont l'impression que les retombées vont dans la poche de l'opérateur et un peu dans celle de la mairie, mais que les riverains directs n'ont que les inconvénients (le bruit, la vue). Il faudrait changer la répartition pour que ce soit plus juste." },
+            { "auteur_id": 5, "type": "expert", "heure": "10:28", "message": "Et la nature dans tout ça ? On parle d'argent, de trottoirs, de vue... Mais l'argent ne compensera jamais la destruction d'un habitat naturel. Ma ligne rouge est très claire : on ne négocie pas avec les espèces protégées. Même si ça rapporte des millions à la commune, certaines zones doivent rester intouchables. C'est non négociable." },
+        {
+            "auteur_id": 8,
+            "type": "master",
+            "heure": "10:00",
+            "message": "Parlons franchement, sans tabou. Si une commune accepte d’accueillir des éoliennes pour l’intérêt national, que doit-elle recevoir en échange ? Est-ce qu’un chèque suffit à faire passer la pilule ?"
+        },
+        {
+            "auteur_id": 2,
+            "type": "expert",
+            "heure": "10:05",
+            "message": "Il faut être réaliste. On ne parle pas juste d’un chèque, on parle de survie pour certaines communes. Les taxes éoliennes financent les écoles, la rénovation de la salle des sports, l’entretien des routes. Pour des villages qui se meurent et n’ont plus de budget, c’est vital. C’est un échange pragmatique : une nuisance visuelle contre des services publics maintenus. Un mal pour un bien, mais l’un pèse souvent plus lourd dans la balance que l’autre."
+        },
+        {
+            "auteur_id": 4,
+            "type": "expert",
+            "heure": "10:11",
+            "message": "Je ne supporte plus cet argument ! Vous parlez d’acheter le silence, ni plus ni moins. Tu peux refaire le trottoir de la mairie en marbre si tu veux, ça ne change pas le fait que mon horizon est barré par des machines industrielles. L’argent ne règle pas la perte de qualité de vie, ni le sentiment qu’on nous a imposé ça."
+        },
+        {
+            "auteur_id": 2,
+            "type": "expert",
+            "heure": "10:16",
+            "message": "Joseph a raison sur un point crucial : c’est l’opacité qui crée la colère. Aujourd’hui, les gens ont l’impression que les retombées vont dans la poche de l’opérateur et un peu dans celle de la mairie, mais que les riverains directs n’ont que les inconvénients (le bruit, la vue). Il faudrait changer la répartition pour que ce soit plus juste."
+        },
+        {
+            "auteur_id": 5,
+            "type": "expert",
+            "heure": "10:22",
+            "message": "Et la nature dans tout ça ? On parle d’argent, de trottoirs, de vue… Mais l’argent ne compense pas la destruction d’un habitat naturel. Ma ligne rouge est très claire : on ne négocie pas avec les espèces protégées. Même si ça rapporte des millions à la commune, certaines zones doivent rester intouchables. C’est non négociable."
+        }
+    ]
     },
+
     {
-        "semaine": "3",
-        "date": "2025-11-26",
-        "topo": "Télémedecine et consultations à distance",
-        "messages": [
-            { "auteur_id": 4, "heure": "09:05", "message": "La téléconsultation facilite l'accès pour les personnes âgées isolées." },
-            { "auteur_id": 2, "heure": "09:20", "message": "Il faut penser à la confidentialité et à la formation des soignants." },
-            { "auteur_id": 1, "heure": "09:43", "message": "Des espaces communs équipés peuvent pallier les problèmes de réseau." },
-            { "auteur_id": 3, "heure": "09:50", "message": "La téléconsultation ne remplace pas toujours l'examen physique." },
-            { "auteur_id": 5, "heure": "09:58", "message": "Des kits de télémédecine (oxymètre, tension) à prêter localement ?" },
-            { "auteur_id": 6, "heure": "10:05", "message": "Assurer la sécurisation des données patients est primordial." },
-            { "auteur_id": 7, "heure": "10:12", "message": "La facturation et le remboursement doivent être clairs pour les praticiens." },
-            { "auteur_id": 8, "heure": "10:20", "message": "Penser à l'accessibilité pour les personnes en situation de handicap." },
-            { "auteur_id": 2, "heure": "10:58", "message": "Encourager les retours d'expérience des patients et soignants." },
-            { "auteur_id": 4, "heure": "11:05", "message": "Veiller à l'interopérabilité des outils entre établissements." }
-        ]
-    },
-    {
-        "semaine": "4",
+        "acte": "3",
         "date": "2025-12-03",
-        "topo": "Prévention et santé publique",
+        "topo": "La Rédaction du Consensus – Semaines 9 à 12 : Le Pacte Final",
         "messages": [
-            { "auteur_id": 5, "heure": "11:00", "message": "Les campagnes de prévention doivent être adaptées aux cultures locales." },
-            { "auteur_id": 1, "heure": "11:18", "message": "L'école est un bon vecteur pour sensibiliser tôt." },
-            { "auteur_id": 6, "heure": "11:30", "message": "Les infirmiers scolaires pourraient jouer un rôle renforcé." },
-            { "auteur_id": 2, "heure": "11:37", "message": "Utiliser des messages simples et visuels pour toucher tous les publics." },
-            { "auteur_id": 3, "heure": "11:45", "message": "Impliquer les élus locaux pour assurer la diffusion des campagnes." },
-            { "auteur_id": 4, "heure": "11:52", "message": "La prévention nutritionnelle est souvent négligée." },
-            { "auteur_id": 6, "heure": "12:00", "message": "Des ateliers pratiques en communauté peuvent changer les habitudes." },
-            { "auteur_id": 7, "heure": "12:08", "message": "La vaccination reste un enjeu important à promouvoir." },
-            { "auteur_id": 8, "heure": "12:15", "message": "Évaluer l'impact des actions pour ajuster les messages." },
-            { "auteur_id": 1, "heure": "12:53", "message": "Former des référents prévention dans chaque village." },
-            { "auteur_id": 5, "heure": "13:00", "message": "Adapter les horaires des actions pour toucher les actifs et les retraités." }
-        ]
-    },
-    {
-        "semaine": "5",
-        "date": "2025-12-10",
-        "topo": "Énergies renouvelables pour les zones isolées",
-        "messages": [
-            { "auteur_id": 7, "heure": "09:00", "message": "La maintenance et la formation locale sont cruciales." },
-            { "auteur_id": 8, "heure": "09:20", "message": "Pensez aux batteries et à la gestion des cycles de vie." },
-            { "auteur_id": 1, "heure": "09:28", "message": "Les micro-réseaux peuvent desservir plusieurs hameaux." },
-            { "auteur_id": 2, "heure": "09:35", "message": "Financer des projets pilotes facilite l'adoption." },
-            { "auteur_id": 3, "heure": "09:43", "message": "La formation d'une filière locale pour l'installation est importante." },
-            { "auteur_id": 4, "heure": "09:50", "message": "L'hybridation (solaire+biomasse) peut sécuriser l'approvisionnement." },
-            { "auteur_id": 5, "heure": "09:58", "message": "S'assurer de la rentabilité sociale pour les petites communes." },
-            { "auteur_id": 6, "heure": "10:05", "message": "L'entretien régulier réduit les pannes et les abandons." },
-            { "auteur_id": 7, "heure": "10:13", "message": "Les coopératives énergétiques locales sont une piste intéressante." },
-            { "auteur_id": 8, "heure": "10:20", "message": "Penser aux aides et subventions disponibles pour les territoires." }
-        ]
-    },
-    {
-        "semaine": "6",
-        "date": "2025-12-17",
-        "topo": "Éducation et formation professionnelle",
-        "messages": [
-            { "auteur_id": 3, "heure": "10:10", "message": "Il manque des formations adaptées aux entreprises locales." },
-            { "auteur_id": 5, "heure": "10:40", "message": "La valorisation des filières locales est aussi importante." },
-            { "auteur_id": 1, "heure": "10:48", "message": "Renforcer les liens entre lycées et PME locales." },
-            { "auteur_id": 2, "heure": "10:55", "message": "Des modules courts et pratiques faciliteraient l'insertion." },
-            { "auteur_id": 3, "heure": "11:03", "message": "Utiliser des enseignants issus du monde professionnel pour la formation." },
-            { "auteur_id": 4, "heure": "11:10", "message": "Favoriser la mobilité et les stages internationaux si possible." },
-            { "auteur_id": 5, "heure": "11:18", "message": "Accompagner les jeunes dans la création d'activités locales." },
-            { "auteur_id": 6, "heure": "11:25", "message": "Des financements pour formations spécifiques sont nécessaires." },
-            { "auteur_id": 7, "heure": "11:33", "message": "Impliquer les chambres consulaires pour adapter les contenus." },
-            { "auteur_id": 8, "heure": "11:40", "message": "La formation continue pour adultes est souvent oubliée." }
-        ]
-    },
-    {
-        "semaine": "7",
-        "date": "2025-12-24",
-        "topo": "Agroécologie et circuits courts",
-        "messages": [
-            { "auteur_id": 2, "heure": "09:30", "message": "Les AMAP et marchés locaux renforcent la résilience." },
-            { "auteur_id": 4, "heure": "09:45", "message": "La transition demande un accompagnement technique pour les agriculteurs." },
-            { "auteur_id": 1, "heure": "10:08", "message": "Favoriser les fermes pédagogiques pour sensibiliser le public." },
-            { "auteur_id": 2, "heure": "10:15", "message": "Mutualiser les outils agricoles entre exploitations." },
-            { "auteur_id": 3, "heure": "10:23", "message": "Développer des circuits courts pour valoriser les produits." },
-            { "auteur_id": 4, "heure": "10:30", "message": "Encourager les pratiques agroforestières pour la biodiversité." },
-            { "auteur_id": 5, "heure": "10:38", "message": "Proposer des formations pratiques sur l'agroécologie." },
-            { "auteur_id": 6, "heure": "10:45", "message": "Les aides publiques doivent être accessibles aux petites fermes." },
-            { "auteur_id": 7, "heure": "10:53", "message": "Valoriser les circuits de transformation locale (conserveries)." },
-            { "auteur_id": 8, "heure": "11:00", "message": "Promouvoir les labels locaux pour la confiance des consommateurs." }
-        ]
-    },
-    {
-        "semaine": "8",
-        "date": "2025-12-31",
-        "topo": "Gestion des déchets",
-        "messages": [
-            { "auteur_id": 6, "heure": "14:00", "message": "Le tri en milieu rural reste peu systématique." },
-            { "auteur_id": 7, "heure": "14:15", "message": "Des points de collecte mobiles pourraient aider." },
-            { "auteur_id": 1, "heure": "14:38", "message": "Mettre en place des circuits de réemploi locaux." },
-            { "auteur_id": 2, "heure": "14:45", "message": "Faciliter l'accès aux déchèteries pour les habitants isolés." },
-            { "auteur_id": 3, "heure": "14:53", "message": "Encourager les composts de voisinage pour les déchets organiques." },
-            { "auteur_id": 4, "heure": "15:00", "message": "Soutenir les initiatives de réparation pour réduire le volume." },
-            { "auteur_id": 5, "heure": "15:08", "message": "Organiser des collectes thématiques (électroménager, textile)." },
-            { "auteur_id": 6, "heure": "15:15", "message": "Des ateliers de fabrication pour donner une seconde vie aux matériaux." },
-            { "auteur_id": 7, "heure": "15:23", "message": "Impliquer les commerces pour la réduction des emballages." },
-            { "auteur_id": 8, "heure": "15:30", "message": "Créer des labels pour les initiatives locales exemplaires." }
-        ]
-    },
-    {
-        "semaine": "9",
-        "date": "2026-01-07",
-        "topo": "Urbanisme et mobilité douce",
-        "messages": [
-            { "auteur_id": 8, "heure": "16:00", "message": "Les voies piétonnes favorisent le commerce local." },
-            { "auteur_id": 1, "heure": "16:38", "message": "Créer des corridors verts pour améliorer le cadre de vie." },
-            { "auteur_id": 2, "heure": "16:45", "message": "Favoriser les déplacements à vélo avec parkings sécurisés." },
-            { "auteur_id": 3, "heure": "16:53", "message": "Limiter la vitesse en centre-bourg pour la sécurité." },
-            { "auteur_id": 4, "heure": "17:00", "message": "Mixer usages résidentiels et commerces pour réduire les trajets." },
-            { "auteur_id": 5, "heure": "17:08", "message": "Améliorer l'éclairage et la signalisation pour piétons." },
-            { "auteur_id": 6, "heure": "17:15", "message": "Penser aux personnes à mobilité réduite dans les aménagements." },
-            { "auteur_id": 7, "heure": "17:23", "message": "Des zones 30 peuvent transformer la qualité de vie locale." },
-            { "auteur_id": 8, "heure": "17:30", "message": "Soutenir le covoiturage pour les trajets domicile-travail." }
-        ]
-    },
-    {
-        "semaine": "10",
-        "date": "2026-01-14",
-        "topo": "Numérisation des services publics",
-        "messages": [
-            { "auteur_id": 1, "heure": "09:10", "message": "La dématérialisation simplifie certaines démarches administratives." },
-            { "auteur_id": 3, "heure": "09:25", "message": "Attention aux fractures numériques et à l'inclusion." },
-            { "auteur_id": 2, "heure": "09:48", "message": "Former des agents pour accompagner le public dans les guichets numériques." },
-            { "auteur_id": 4, "heure": "09:55", "message": "Simplifier les interfaces pour tous les profils d'usagers." },
-            { "auteur_id": 5, "heure": "10:03", "message": "Garantir la sécurité et la confidentialité des données." },
-            { "auteur_id": 6, "heure": "10:10", "message": "Proposer des alternatives pour ceux qui ne sont pas connectés." },
-            { "auteur_id": 7, "heure": "10:18", "message": "Développer des services mobile-first pour un accès large." },
-            { "auteur_id": 8, "heure": "10:25", "message": "Coordonner les initiatives entre collectivités pour éviter la duplication." },
-            { "auteur_id": 1, "heure": "11:03", "message": "Prévoir des campagnes d'information sur les nouveaux services." },
-            { "auteur_id": 3, "heure": "11:10", "message": "Assurer un support multicanal pour résoudre les problèmes techniques." }
-        ]
-    },
-    {
-        "semaine": "11",
-        "date": "2026-01-21",
-        "topo": "Économie circulaire dans les territoires",
-        "messages": [
-            { "auteur_id": 5, "heure": "11:05", "message": "Le réemploi peut créer des emplois locaux." },
-            { "auteur_id": 4, "heure": "11:20", "message": "Des filières courtes pour la réparation sont utiles." },
-            { "auteur_id": 2, "heure": "11:35", "message": "Il faut des aides pour lancer des ateliers partagés." },
-            { "auteur_id": 6, "heure": "11:43", "message": "Inciter les entreprises à réutiliser les matériaux locaux." },
-            { "auteur_id": 7, "heure": "11:50", "message": "Créer des plateformes d'échange pour matières résiduelles." },
-            { "auteur_id": 8, "heure": "11:58", "message": "Former aux métiers de la réparation et du recyclage." },
-            { "auteur_id": 1, "heure": "12:35", "message": "Favoriser l'achat responsable par des labels locaux." },
-            { "auteur_id": 2, "heure": "12:43", "message": "Créer des synergies entre filières agricoles et industrielles." },
-            { "auteur_id": 3, "heure": "12:50", "message": "Penser à la logistique inverse pour récupérer les produits." },
-            { "auteur_id": 4, "heure": "12:58", "message": "Des partenariats publics-privés peuvent accélérer les projets." },
-            { "auteur_id": 5, "heure": "13:05", "message": "Mesurer les impacts économiques et sociaux des initiatives." }
-        ]
-    },
-    {
-        "semaine": "12",
-        "date": "2026-01-28",
-        "topo": "Culture et lien social",
-        "messages": [
-            { "auteur_id": 6, "heure": "18:15", "message": "La diffusion culturelle numérique peut compléter l'offre locale." },
-            { "auteur_id": 7, "heure": "18:30", "message": "Soutenir les bénévoles est essentiel pour faire vivre les initiatives." },
-            { "auteur_id": 1, "heure": "18:38", "message": "Créer des lieux polyvalents pour spectacle, réunion et ateliers." },
-            { "auteur_id": 2, "heure": "18:45", "message": "Favoriser les collaborations entre associations et écoles." },
-            { "auteur_id": 3, "heure": "18:53", "message": "Promouvoir les pratiques artistiques locales auprès des jeunes." },
-            { "auteur_id": 4, "heure": "19:00", "message": "Des résidences d'artistes peuvent dynamiser un territoire." },
-            { "auteur_id": 5, "heure": "19:08", "message": "La culture comme vecteur d'attractivité et de tourisme." },
-            { "auteur_id": 6, "heure": "19:15", "message": "Soutenir la formation des intervenants culturels." },
-            { "auteur_id": 7, "heure": "19:23", "message": "Mettre en place des billetteries solidaires pour l'accès." },
-            { "auteur_id": 8, "heure": "19:30", "message": "Favoriser la co-construction des projets avec les habitants." }
+            { "auteur_id": 8, "type": "master", "heure": "09:00", "message": "Nous devons maintenant proposer une nouvelle méthode de décision. Le constat est unanime : aujourd'hui, les projets arrivent \"tout ficelés\" sur les territoires, et c'est ce qui crée le blocage immédiat. Que proposez-vous concrètement pour changer cette mécanique ?" },
+            { "auteur_id": 2, "type": "expert", "heure": "09:07", "message": "Il faut arrêter les simulacres de concertation. Je ne veux plus de ces réunions où l'on vient nous présenter un projet déjà bouclé. Je propose qu'avant même de déposer un permis, l'opérateur soit obligé de financer ce que j'appellerais une \"Étude d'Acceptabilité Sociale\" (EAS). Pas juste une étude technique sur le vent, mais une vraie étude indépendante sur l'avis des gens." },
+            { "auteur_id": 4, "type": "expert", "heure": "09:14", "message": "Pour être franc, j'allais demander un droit de Veto pur et simple. Mais je comprends que ça pourrait tout bloquer. Alors, je suis prêt à soutenir l'idée de Delphine sur l'EAS, mais à une condition stricte : que cette étude soit contraignante. Si le résultat montre que la population locale est massivement contre, le projet doit être stoppé net ou totalement revu. On ne veut pas juste être \"consultés\", on veut peser." },
+            { "auteur_id": 1, "type": "expert", "heure": "09:20", "message": "Je ne vous cache pas que c'est dur pour nous. Un veto ou un arrêt sur étude, c'est un risque énorme pour nos investissements. Mais c'est juste. Si on veut sortir du blocage systématique qui finit au tribunal pendant des années, on doit accepter d'être évalués sur le social comme on l'est sur l'acoustique. Je valide l'idée de l'EAS obligatoire, si ça nous permet d'avoir des règles du jeu claires." },
+            { "auteur_id": 8, "type": "citizen", "heure": "09:26", "message": "J'ai une inquiétude sur l'indépendance. Pour éviter que l'opérateur ne paie un expert \"ami\" qui dira que tout va bien, la commune doit pouvoir choisir elle-même l'organisme de contrôle. On appelle ça la \"Contre-Expertise Citoyenne\". C'est l'opérateur qui paie, mais c'est nous qui choisissons l'expert." },
+            { "auteur_id": 8, "type": "master", "heure": "09:32", "message": "C'est noté et c'est une avancée majeure. Vous êtes en train de créer un \"Droit de Regard\" officiel et financé qui n'existait pas. On passe de la méfiance à la vérification." },
+            { "auteur_id": 8, "type": "master", "heure": "10:00", "message": "C'est la dernière ligne droite. Nous devons résumer nos trois mois de travaux en mesures claires pour le rapport final. Quels sont les grands piliers de notre consensus ?" },
+            { "auteur_id": 1, "type": "expert", "heure": "10:05", "message": "Je commence par le cadre général : le Mix Équilibré. Il faut écrire noir sur blanc qu'on ne doit plus opposer Nucléaire et Éolien. On garde le nucléaire pour assurer la \"base\", et on développe l'éolien pour la diversification. C'est la fin de la guerre des énergies : on a besoin des deux." },
+            { "auteur_id": 5, "type": "expert", "heure": "10:10", "message": "Il y a aussi l'urgence environnementale : le Veto Écologique. Je veux qu'on inscrive la création de \"Zones d'Exclusion Absolue\" (ZEA). Dans les parcs naturels ou les couloirs de migration, c'est interdiction totale de construire. Aucune dérogation possible, même si le vent est excellent." },
+            { "auteur_id": 9, "type": "citizen", "heure": "10:15", "message": "Sur l'économie, on valide le Partage de la Valeur. Fini l'argent qui part ailleurs. On propose une \"Participation Locale Obligatoire\" : les habitants et les mairies doivent pouvoir entrer au capital du projet. On ne veut plus être de simples spectateurs qui subissent, mais des partenaires qui bénéficient." },
+            { "auteur_id": 4, "type": "expert", "heure": "10:20", "message": "Et pour moi, le pilier qui tient tout le reste, c'est la Démocratie Locale. C'est l'EAS dont on a parlé. Pas de projet sans validation sociale préalable. Si ça ne passe pas avec les gens, ça ne se fait pas. C'est notre garantie." },
+            { "auteur_id": 8, "type": "master", "heure": "10:25", "message": "Le rapport est prêt. Vous étiez opposés au départ, vous avez fini par écrire une loi ensemble. Un dernier mot pour conclure cette aventure ?" },
+            { "auteur_id": 4, "type": "expert", "heure": "10:28", "message": "Je ne vais pas vous mentir, je ne suis pas devenu un militant pro-éolien du jour au lendemain, je reste méfiant. Mais avec ces règles-là (surtout le contrôle social et les zones interdites), je pense qu'on peut enfin sortir de la guerre de tranchées. Je passe de \"Bloqueur\" par principe à \"Surveillant\" de la méthode." },
+            { "auteur_id": 1, "type": "expert", "heure": "10:32", "message": "De mon côté, j'ai appris l'humilité. J'ai dû admettre que la technique ne pouvait pas avoir raison toute seule. Ce rapport est un compromis imparfait : on perdra peut-être un peu de temps au début des projets pour concerter, mais on en gagnera énormément à la fin car ils seront acceptés par la population." }
         ]
     }
 ]

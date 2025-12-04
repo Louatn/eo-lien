@@ -63,12 +63,11 @@ export default function HomePage() {
       <section className="hero-section">
         <h1>Bienvenue sur EO-LIEN</h1>
         <p className="hero-description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor 
-          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
-          irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
-          deserunt mollit anim id est laborum.
+          <strong>Entre l'urgence climatique et la protection des paysages,</strong> l'éolien divise profondément la France. Comment l'articuler avec le nucléaire ? Faut-il sacrifier nos horizons pour le climat ?
+          <br /><br />
+          Pour répondre à ce défi complexe, une simple consultation ne suffisait pas. Nous avons organisé une <strong>Conférence de Consensus</strong> : 12 semaines d'immersion où citoyens et experts ont disséqué la technique et l'humain.
+          <br /><br />
+          Ce site vous raconte comment, face à la réalité des chiffres et du terrain, ils sont passés de l'affrontement à la construction d'un nouveau modèle énergétique accepté par tous.
         </p>
         <Link href="/main" className="cta-button">
           Accéder aux discussions
@@ -102,10 +101,9 @@ export default function HomePage() {
           ))}
         </div>
         <p className="section-description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel risus nec 
-          turpis consectetur euismod. Vivamus facilisis justo vel augue blandit, at 
-          scelerisque nulla fringilla. Pellentesque habitant morbi tristique senectus et 
-          netus et malesuada fames ac turpis egestas.
+          <strong>Ils ont été choisis au hasard.</strong> Ce ne sont pas des spécialistes, juste des gens comme vous et moi.
+          <br /><br />
+          Certains habitent à côté d'éoliennes, d'autres sont contre, ou simplement curieux. Ils ont accepté de passer trois mois à étudier le sujet à fond pour se faire leur propre avis.
         </p>
       </section>
 
@@ -137,10 +135,9 @@ export default function HomePage() {
           ))}
         </div>
         <p className="section-description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae nunc 
-          sed libero venenatis dignissim. Proin in velit ac tortor hendrerit vehicula. 
-          Suspendisse potenti. Integer euismod dui eu lorem tincidunt, vel convallis 
-          mauris feugiat. Nullam ac sapien nec magna vestibulum fringilla.
+          <strong>Ingénieurs, biologistes ou maires,</strong> ils ne sont pas là pour défendre un camp, mais pour apporter des faits.
+          <br /><br />
+          Ils expliquent la technique et la réalité du terrain sans rien cacher. Grâce à eux, les citoyens ont toutes les cartes en main pour décider.
         </p>
       </section>
     </main>

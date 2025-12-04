@@ -1,5 +1,6 @@
 [
     {
+        "id": 1,
         "nom": "Antipasty",
         "prenom": "Bernard",
         "profession": "Ingénieur en énergie",
@@ -9,6 +10,7 @@
         "commentaire": "Travaille à La défense sur des projets nationaux nucléaires"
     },
     {
+        "id": 2,
         "nom": "Petit",
         "prenom": "Delphine",
         "profession": "Élue régionale",
@@ -18,6 +20,7 @@
         "commentaire": "Élue de la mairie de Rosporden, l'implantation de nouvelles éoliennes est un sujet majeur de sa campagne."
     },
     {
+        "id": 3,
         "nom": "Martin",
         "prenom": "Jordan",
         "profession": "Économiste",
@@ -27,6 +30,7 @@
         "commentaire": "Travaille dans une banque d'affaire et intervient régulièrement dans les médias sur les questions économiques."
     },
     {
+        "id": 4,
         "nom": "Thomas",
         "prenom": "Joseph",
         "profession": "Fondateur 'Les Éoliens génés'",
@@ -36,30 +40,43 @@
         "commentaire": "A créé une association qui milite contre l'implantation d'éoliennes"
     },
     {
+        "id": 5,
         "nom": "Robert",
         "prenom": "Julie",
         "profession": "Écologue",
         "image": "./data/images/experts/julie.jpeg",
         "age": 27,
-        "diplome": "CAP cuisine",
-        "commentaire": "Cuisine fusion, propriétaire d'un petit restaurant."
+        "diplome": "L3 de sociologie",
+        "commentaire": "Passionnée d'écologie, elle s'est passionée pour les énergies renouvelables et leurs impacts sociaux."
     },
     {
+        "id": 6,
         "nom": "Duchateau",
         "prenom": "Marc",
         "profession": "Fermier",
         "image": "./data/images/experts/marc.jpeg",
         "age": 41,
-        "diplome": "Master en enseignement",
-        "commentaire": "Professeure de lycée professionnel, impliquée dans l'éducation inclusive."
+        "diplome": "BTS agricole",
+        "commentaire": "Travaille dans la ferme de son père, s'est fait voler une partie de ses terres pour l'implantation d'éoliennes."
     },
     {
+        "id": 7,
         "nom": "Siffredi",
         "prenom": "Romain",
         "profession": "Urbaniste",
         "image": "./data/images/experts/romain.jpeg",
         "age": 33,
-        "diplome": "Licence en journalisme",
-        "commentaire": "Couvre l'actualité culturelle et les festivals locaux."
+        "diplome": "diplôme d'ingénieur urbain",
+        "commentaire": "A travaillé sur des gros projets d'aménagement urbain à la chapelle thouarault."
+    },
+    {
+        "id": 8,
+        "nom": "Botabouret",
+        "prenom": "Arthur",
+        "profession": "Maître de conférence",
+        "image": "./data/images/experts/master.jpeg",
+        "age": 33,
+        "diplome": "",
+        "commentaire": "Travaille à Éo-lien en tant que maître de conférence sur les enjeux énergétiques."
     }
 ]

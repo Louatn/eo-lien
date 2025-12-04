@@ -5,6 +5,7 @@ import Link from 'next/link';
 
 interface Message {
   auteur_id: number;
+  type: 'citizen' | 'expert' | 'master';
   heure: string;
   message: string;
 }
@@ -17,7 +18,8 @@ interface Discussion {
 }
 
 interface Person {
-  id?: number;
+  type: 'citizen' | 'expert';
+  id: number;
   nom: string;
   prenom: string;
   profession: string;
@@ -29,8 +31,9 @@ interface Person {
 
 export default function Home() {
   const [discussions, setDiscussions] = useState<Discussion[]>([]);
-  const [authors, setAuthors] = useState<Map<number, Person>>(new Map());
-  const [currentWeek, setCurrentWeek] = useState(1);
+  const [citizens, setCitizens] = useState<Map<number, Person>>(new Map());
+  const [experts, setExperts] = useState<Map<number, Person>>(new Map());
+  const [currentAct, setCurrentAct] = useState(1);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -42,30 +45,24 @@ export default function Home() {
           fetch('/data/discussion.json'),
         ]);
 
-        const citizens: Person[] = await citizensResp.json();
-        const experts: Person[] = await expertsResp.json();
+        const citizensData: Person[] = await citizensResp.json();
+        const expertsData: Person[] = await expertsResp.json();
         const discussionsData: Discussion[] = await discussionsResp.json();
 
-        // Build authors map
-        const authorsMap = new Map<number, Person>();
-        let maxId = 0;
-
-        // Add citizens with their IDs
-        for (const c of citizens) {
-          if (typeof c.id === 'number' && c.id > maxId) maxId = c.id;
-        }
-        for (const c of citizens) {
-          if (c.id) authorsMap.set(c.id, c);
+        // Build citizens map
+        const citizensMap = new Map<number, Person>();
+        for (const c of citizensData) {
+          if (c.id) citizensMap.set(c.id, { ...c, type: 'citizen' });
         }
 
-        // Assign expert ids starting at maxId + 1
-        let nextExpertId = maxId + 1;
-        for (const e of experts) {
-          authorsMap.set(nextExpertId, { ...e, id: nextExpertId });
-          nextExpertId++;
+        // Build experts map
+        const expertsMap = new Map<number, Person>();
+        for (const e of expertsData) {
+          if (e.id) expertsMap.set(e.id, { ...e, type: 'expert' });
         }
 
-        setAuthors(authorsMap);
+        setCitizens(citizensMap);
+        setExperts(expertsMap);
         setDiscussions(discussionsData);
         
         // Load current week from localStorage
@@ -73,7 +70,7 @@ export default function Home() {
         if (savedWeek) {
           const weekNum = parseInt(savedWeek, 10);
           if (weekNum >= 1 && weekNum <= 12) {
-            setCurrentWeek(weekNum);
+            setCurrentAct(weekNum);
           }
         }
         
@@ -89,24 +86,24 @@ export default function Home() {
 
   useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
-      if (e.key === 'ArrowLeft' && currentWeek > 1) {
-        setCurrentWeek(currentWeek - 1);
+      if (e.key === 'ArrowLeft' && currentAct > 1) {
+        setCurrentAct(currentAct - 1);
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
-      if (e.key === 'ArrowRight' && currentWeek < 12) {
-        setCurrentWeek(currentWeek + 1);
+      if (e.key === 'ArrowRight' && currentAct < 12) {
+        setCurrentAct(currentAct + 1);
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     }
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [currentWeek]);
+  }, [currentAct]);
 
   // Save current week to localStorage whenever it changes
   useEffect(() => {
-    localStorage.setItem('semaineId', String(currentWeek));
-  }, [currentWeek]);
+    localStorage.setItem('semaineId', String(currentAct));
+  }, [currentAct]);
 
   if (loading) {
     return (
@@ -116,30 +113,25 @@ export default function Home() {
     );
   }
 
-  const week = discussions[currentWeek - 1] || discussions.find(d => String(d.semaine) === String(currentWeek));
+  const act = discussions[currentAct - 1] || discussions.find(d => String(d.semaine) === String(currentAct));
 
   return (<>    
       <main>
         <div className="topo">
           <div className="week-title">
-            <h2>Semaine {week?.semaine || currentWeek}</h2>
-            <div className="topo-date">{week?.date || ''}</div>
+            <h2>Acte {act?.semaine || currentAct}</h2>
+            <div className="topo-date">{act?.date || ''}</div>
           </div>
-          <p className="topo-content">{week?.topo || 'Aucune discussion trouvée pour cette semaine.'}</p>
-          <div className="topo-actions">
-            <Link
-              href="/summary"
-              className="summary-btn"
-              aria-label={`Voir le résumé de la semaine ${currentWeek}`}
-            >
-              Voir le résumé
-            </Link>
-          </div>
+          <p className="topo-content">{act?.topo || 'Aucune discussion trouvée pour cette semaine.'}</p>
         </div>
 
         <section className="messages">
-          {week?.messages.map((msg, idx) => {
-            const author = authors.get(msg.auteur_id);
+          {act?.messages.map((msg, idx) => {
+            const author = msg.type === 'master'
+              ? experts.get(8) || experts.get(msg.auteur_id)
+              : msg.type === 'expert'
+              ? experts.get(msg.auteur_id)
+              : citizens.get(msg.auteur_id);
             const initials = author
               ? ((author.prenom?.[0] || '') + (author.nom?.[0] || '')).toUpperCase()
               : 'U';
@@ -159,6 +151,12 @@ export default function Home() {
                 <div className="meta">
                   <div className="who">
                     {fullName}
+                    {msg.type === 'expert' && (
+                      <span className="expert-badge">Expert</span>
+                    )}
+                    {msg.type === 'master' && (
+                      <span className="master-badge">maitre de conference</span>
+                    )}
                     <span className="time">{msg.heure}</span>
                   </div>
                   <div className="text">{msg.message}</div>
@@ -169,20 +167,28 @@ export default function Home() {
         </section>
       </main>
 
-      <div className="weekbar" aria-label="Sélection de la semaine">
-        {Array.from({ length: 12 }, (_, i) => i + 1).map((week) => (
-          <button
-            key={week}
-            className={`weekbtn ${week === currentWeek ? 'active' : ''}`}
-            onClick={() => {
-              setCurrentWeek(week);
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}
-          >
-            {week}
-          </button>
-        ))}
-      </div>
+        <div className="weekbar" aria-label="Sélection de l'acte">
+          {[
+            { label: '1-4', act: 1 },
+            { label: '5-8', act: 2 },
+            { label: '9-12', act: 3 },
+          ].map((group) => (
+            <button
+              key={group.label}
+              className={`weekbtn ${group.act === currentAct ? 'active' : ''}`}
+              onClick={() => {
+          setCurrentAct(group.act);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+            >
+              {group.label}
+            </button>
+          ))}
+          <Link href="/summary">
+          <button className="weekbtn">Summary</button>
+        </Link>
+        </div>
+        
 
       <footer />
     </>
