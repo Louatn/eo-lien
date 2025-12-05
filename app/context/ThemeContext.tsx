@@ -7,23 +7,16 @@ type Theme = 'light' | 'dark';
 interface ThemeContextType {
   theme: Theme;
   toggleTheme: () => void;
-  showAds: boolean;
-  toggleAds: () => void;
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setTheme] = useState<Theme>('light');
-  const [showAds, setShowAds] = useState<boolean>(true);
 
   useEffect(() => {
     const savedTheme = (localStorage.getItem('theme') as Theme) || 'light';
-    const savedAds = localStorage.getItem('showAds');
     setTheme(savedTheme);
-    if (savedAds === 'false') {
-      setShowAds(false);
-    }
   }, []);
 
   useEffect(() => {
@@ -32,20 +25,12 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     localStorage.setItem('theme', theme);
   }, [theme]);
 
-  useEffect(() => {
-    localStorage.setItem('showAds', String(showAds));
-  }, [showAds]);
-
   const toggleTheme = () => {
     setTheme(prev => (prev === 'light' ? 'dark' : 'light'));
   };
 
-  const toggleAds = () => {
-    setShowAds(prev => !prev);
-  };
-
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme, showAds, toggleAds }}>
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
       {children}
     </ThemeContext.Provider>
   );
